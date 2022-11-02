@@ -1,0 +1,71 @@
+.mail{
+  width: 90%;
+  margin-top: 50px;
+  background-color: #11698e;
+  color: #F8F1F1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+}
+
+.mailInputContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mailInputContainer>div>input{
+  width: 300px;
+  height: 5  0px;
+  padding: 10px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.mailInputContainer>div>button{
+  height: 40px;
+  padding:  5px 10px;
+  background-color: #F8F1F1;
+  color: #11698e;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .mailTitle{
+    font-size: x-large;
+  }
+
+  .mail {
+    width: 90%;
+    padding: 25px;
+    margin-top: 25px;
+  } 
+
+  .mailInputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mailInputContainer>div>button{
+    font-size: small;
+  } 
+
+  .mailInputContainer>div>input {
+    padding: 7px;
+  }
+}
+
+@media ((min-width:768px) and (max-width: 976px))  {
+  .mail {
+    width: 87%;
+    margin: auto;
+  }
+}
