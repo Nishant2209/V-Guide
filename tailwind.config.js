@@ -24,6 +24,7 @@ module.exports = {
         veryPaleRed: "hsl(13,100%,96%)",
         veryLightGray: "hsl(0,0%,98%)",
         lightGray: "#cbcddc",
+        orange: "#e53f19",
       },
       fontFamily: {
         primary: ["Montserrat", "sans-serif"],
