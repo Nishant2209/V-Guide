@@ -1,5 +1,5 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -18,14 +18,14 @@ const Header = ({ type }) => {
     <div className="header bg-gradient-to-b from-[#b4b7cd] via-white to-[#f0d0cb] text-veryDarkBlue">
       <Navbar />
       <div className="headerContainer flex flex-col justify-center items-center">
-        <p className="headerTitle text-6xl my-5 t-shadow">
+        <p className="headerTitle text-4xl md:text-5xl lg:text-6xl my-5 t-shadow">
           Find your <span className="text-orange font-extrabold">Guru</span> !
         </p>
-        <p className="headerDesc font-bold text-xl w-1/3 text-center my-5 leading-9">
+        <p className="headerDesc font-bold text-md lg:text-xl md:w-2/3 lg:w-1/3 text-center my-5 leading-9 px-7">
           Get the guidance from the mentors around you who are accessible and
           friendly.
         </p>
-        <div className="headerSearch shadow-class w-1/2 bg-white py-4 px-8 rounded-lg mt-5 -mb-8 ">
+        <div className="headerSearch shadow-class w-1/2 bg-white py-4 px-4 lg:px-8 rounded-lg mt-5 -mb-8 ">
           <div className="headerSearchItem flex flex-row justify-between items-center">
             <input
               type="text"
@@ -41,7 +41,7 @@ const Header = ({ type }) => {
           </div>
         </div>
       </div>
-      <hr className="bg-gray-600 h-[3px]"/>
+      <hr className="bg-gray-600 h-[3px]" />
     </div>
   );
 };

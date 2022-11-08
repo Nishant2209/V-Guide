@@ -27,3 +27,50 @@ background-color: #0C2D4A;
 .shadow {
   box-shadow: 0px 0px 50px rgba(14, 51, 67, 0.25) ;
 }
+
+.hamburg{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+    transform: rotate(90deg);
+  }
+  
+  .hamburg-top, .hamburg-middle, .hamburg-bottom{
+    position: absolute;
+    top:-7px;
+    right: 20px;
+    height: 30px;
+    width: 3px;
+    background: #0C2D4A;
+    transform: rotate(0deg);
+    transition: all 0.25s;
+  }
+  
+  .hamburg-middle{
+    transform: translateX(7px);
+  }
+  .hamburg-bottom{
+    transform: translateX(14px);
+  }
+  
+  .open{
+    transform: rotate(90deg);
+    transform: translateY(0px);
+  }
+  .open .hamburg-top{
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+    top: -14px;
+    right: 0px;
+  }
+  
+  .open .hamburg-middle{
+    display: none;
+  }
+  
+  .open .hamburg-bottom{
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+    top: -14px;
+    right: 0px;
+  }
