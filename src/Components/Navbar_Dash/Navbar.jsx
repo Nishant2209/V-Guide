@@ -12,8 +12,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar flex justify-center bg-transparent py-5">
-      <div className="navContainer bg-lightGray flex justify-between w-3/4 py-3 px-16 items-center rounded-lg text-darkBlue shadow">
+    <div className="navbar flex justify-center bg-transparent py-5 sticky top-0">
+      <div className="navContainer bg-[rgba(255, 255, 255, 0.27)] backdrop-blur-xl flex justify-between w-3/4 py-3 px-16 items-center rounded-lg text-darkBlue shadow">
         <div className="text-veryDarkBlue font-extrabold text-3xl">
           V- Guide
         </div>
@@ -30,13 +30,13 @@ const Navbar = () => {
         </div>
         <div className="navItems">
           <button
-            className="navButton border-2 py-1 px-4 ml-3 border-veryDarkBlue rounded-lg"
+            className="navButton border-[1.2px] py-1 px-4 ml-3 border-veryDarkBlue rounded-lg font-bold"
             onClick={routeChange1}
           >
             Login
           </button>
           <button
-            className="navButton border-2 py-1 px-4 ml-3 border-veryDarkBlue rounded-lg"
+            className="navButton border-[1.2px] py-1 px-4 ml-3 border-veryDarkBlue rounded-lg font-bold"
             onClick={routeChange2}
           >
             Sign Up
