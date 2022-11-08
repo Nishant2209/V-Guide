@@ -1,11 +1,11 @@
-.hover-underline-animation {
+.hover-effect {
     display: inline-block;
     position: relative;
     color: #F8F1F1;
     cursor: pointer;
 }
   
-.hover-underline-animation:after {
+.hover-effect:after {
   content: '';
   position: absolute;
   width: 100%;
@@ -18,7 +18,7 @@
   transition: transform 0.25s ease-out;
 }
   
-.hover-underline-animation:hover:after {
+.hover-effect:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
   background-color: #F8F1F1;

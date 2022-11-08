@@ -38,7 +38,7 @@ function Navbar() {
 
   let navigate = useNavigate();
   const routeChange = () => {
-    navigate('/Dashboard');
+    navigate("/Dashboard");
   };
 
   return (
@@ -61,26 +61,27 @@ function Navbar() {
             </div>
             {/* Items */}
             <div className="hidden md:flex md:justify-center space-x-6 text-xl">
-              <a href="#Hero_Section" className="hover-underline-animation">
+              <a href="#Hero_Section" className="hover-effect">
                 Home
               </a>
-              <a href="#Feature_Section" className="hover-underline-animation">
+              <a href="#Feature_Section" className="hover-effect">
                 Feature
               </a>
-              <a href="#About_Us" className="hover-underline-animation">
+              <a href="#About_Us" className="hover-effect">
                 About
               </a>
-              <a href="#Testimonials" className="hover-underline-animation">
+              <a href="#Testimonials" className="hover-effect">
                 Testimonials
               </a>
-              <a href="#Footer" className="hover-underline-animation">
+              <a href="#Footer" className="hover-effect">
                 Contact
               </a>
             </div>
             {/* Buttons */}
             <div className="button hidden md:block">
               <button
-                className="text-lg font-medium transition ease-in-out delay-150 bg-skin text-darkblue rounded-full px-7 py-2 border-2 hover:bg-transparent hover:border-skin hover:text-skin" onClick={routeChange}
+                className="text-lg font-medium transition ease-in-out delay-150 bg-skin text-darkblue rounded-full px-7 py-2 border-2 hover:bg-transparent hover:border-skin hover:text-skin"
+                onClick={routeChange}
               >
                 Dashboard
               </button>
