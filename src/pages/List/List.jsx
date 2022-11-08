@@ -7,7 +7,6 @@ import MailList from "../../Components/Mail_List/MailList";
 const List = () => {
   return (
     <div>
-      <Navbar />
       <Header />
       <div className="listContainer">
         <div className="listWrapper">
