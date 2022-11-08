@@ -12,15 +12,34 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
-      <div className="navContainer">
-        <h1 className="logo">V- Guide</h1>
+    <div className="navbar flex justify-center bg-transparent py-5">
+      <div className="navContainer bg-lightGray flex justify-between w-3/4 py-3 px-16 items-center rounded-lg text-darkBlue shadow">
+        <div className="text-veryDarkBlue font-extrabold text-3xl">
+          V- Guide
+        </div>
+        <div>
+          <ul className="flex row">
+            <li className="mr-10 font-semibold hover-underline-animation">
+              Home
+            </li>
+            <li className="mr-10 font-semibold hover-underline-animation">
+              Projects
+            </li>
+            <li className="font-semibold hover-underline-animation">Mentors</li>
+          </ul>
+        </div>
         <div className="navItems">
-          <button className="navButton" onClick={routeChange2}>
-            Register
-          </button>
-          <button className="navButton" onClick={routeChange1}>
+          <button
+            className="navButton border-2 py-1 px-4 ml-3 border-veryDarkBlue rounded-lg"
+            onClick={routeChange1}
+          >
             Login
+          </button>
+          <button
+            className="navButton border-2 py-1 px-4 ml-3 border-veryDarkBlue rounded-lg"
+            onClick={routeChange2}
+          >
+            Sign Up
           </button>
         </div>
       </div>

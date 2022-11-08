@@ -1,64 +1,29 @@
-.navbar{
-  height: 50px;
-  background-color: #11698E;
-  display: flex;
-  justify-content: center;
-}
-
-.navContainer{
-  width: 100%;
-  max-width: 1024px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo{
-  font-weight: 500;
-  font-size: 2rem;
-}
-
-.navButton{
-  margin-left: 20px;
-  border: none;
-  padding: 5px 15px;
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0C2D4A;
   cursor: pointer;
-  color: #11698E;
-  font-size: large;
-  border-radius: 9999px;
-  background-color: white;
 }
 
-.navButton:hover{
-  scale: 1.1;
-  transition: all ease-in-out 250ms;
+.hover-underline-animation:after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color: #0C2D4A;
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
 }
 
-@media (max-width: 768px) {
-
-  .navContainer {
-    margin: 0 10px;
-  }
-  
-  .logo {
-    width: 50%;
-    font-size: 2rem;
-  }  
-   .navButton {
-    font-size: 11px;
-    font-weight: 600px;
-   }
+.hover-underline-animation:hover:after {
+transform: scaleX(1);
+transform-origin: bottom left;
+background-color: #0C2D4A;
 }
 
-@media ((min-width:768px) and (max-width: 976px)) {
-
-  .navContainer {
-    margin: 0 30px;
-  }
-
-  .logo {
-    width: 70%;
-    font-size: 2.5rem;
-  } 
+.shadow {
+  box-shadow: 5px 2px 30px rgba(0, 0, 0, 0.2), -5px -2px 30px rgba(0, 0, 0, 0.2) ;
 }
