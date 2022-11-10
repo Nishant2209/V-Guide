@@ -6,6 +6,22 @@ const Navbar = () => {
   const [burger_class, setBurgerClass] = useState("!open");
   const [menu_class, setMenuClass] = useState("hidden");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [isFixed1, setFixed1Class] = useState("");
+  const [isFixed2, setFixed2Class] = useState("absolute");
+
+  useEffect(() => {
+    window.addEventListener("scroll", stickNavbar);
+    return () => window.removeEventListener("scroll", stickNavbar);
+  }, []);
+
+  const stickNavbar = () => {
+    if (window !== undefined) {
+      let windowHeight = window.scrollY;
+      // window height changed for the demo
+      windowHeight > 20 ? setFixed1Class("fixed w-full z-50") : setFixed1Class("");
+      windowHeight > 20 ? setFixed2Class("fixed top-24") : setFixed2Class("absolute");
+    }
+  };
 
   const Hamburger = () => {
     if (!isMenuClicked) {
@@ -33,8 +49,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar flex justify-center bg-transparent py-5 sticky top-0">
-        <div className="navContainer bg-[rgba(255, 255, 255, 0.27)] backdrop-blur-xl flex justify-between w-11/12 lg:w-3/4 py-3 px-8 lg:px-16 items-center rounded-lg text-veryDarkBlue shadow">
+      <div
+        className={`navbar flex justify-center py-5 ${isFixed1} transition-all 5s `}
+      >
+        <div className="navContainer backdrop-blur-xl flex justify-between w-11/12 lg:w-3/4 py-3 px-8 lg:px-16 items-center rounded-lg text-veryDarkBlue shadow">
           {/* Hamburger Menu */}
           <div className="lg:hidden">
             <button
@@ -83,7 +101,7 @@ const Navbar = () => {
       <div className="lg:hidden">
         <div
           id="menu"
-          className={`absolute flex-col items-center py-8 mt-5 font-bold bg-lightGray backdrop-blur-xl left-6 right-6 drop-shadow-md text-skin font-primary rounded-xl ${menu_class}`}
+          className={`${isFixed2} flex-col items-center py-8 mt-5 font-bold backdrop-blur-xl left-6 right-6 shadow text-skin font-primary rounded-xl ${menu_class}`}
           onClick={Hamburger}
         >
           <ul className="flex flex-col justify-center items-center">
