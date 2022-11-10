@@ -18,7 +18,7 @@ const Header = ({ type }) => {
     <div className="header bg-gradient-to-b from-[#b4b7cd] via-white to-[#f0d0cb] text-veryDarkBlue">
       <Navbar />
       <div className="headerContainer flex flex-col justify-center items-center">
-        <p className="headerTitle text-4xl md:text-5xl lg:text-6xl my-5 t-shadow">
+        <p className="headerTitle text-5xl mx-6 md:text-5xl lg:text-7xl my-5 t-shadow text-center">
           Find your <span className="text-orange font-extrabold">Guru</span> !
         </p>
         <p className="headerDesc font-bold text-md lg:text-xl md:w-2/3 lg:w-1/3 text-center my-5 leading-9 px-7">
