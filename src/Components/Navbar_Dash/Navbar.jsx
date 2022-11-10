@@ -18,7 +18,7 @@ const Navbar = () => {
     if (window !== undefined) {
       let windowHeight = window.scrollY;
       // window height changed for the demo
-      windowHeight > 20 ? setFixed1Class("fixed w-full z-50") : setFixed1Class("");
+      windowHeight > 20 ? setFixed1Class("fixed w-full shadow backdrop-blur-xl z-[99999]") : setFixed1Class("");
       windowHeight > 20 ? setFixed2Class("fixed top-24") : setFixed2Class("absolute");
     }
   };
@@ -50,9 +50,9 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`navbar flex justify-center py-5 ${isFixed1} transition-all 5s `}
+        className={`navbar flex justify-center py-5 transition-all 5s `}
       >
-        <div className="navContainer backdrop-blur-xl flex justify-between w-11/12 lg:w-3/4 py-3 px-8 lg:px-16 items-center rounded-lg text-veryDarkBlue shadow">
+        <div className={`navContainer flex justify-between w-11/12 lg:w-3/4 py-3 px-8 lg:px-16 items-center rounded-lg text-veryDarkBlue ${isFixed1}`}>
           {/* Hamburger Menu */}
           <div className="lg:hidden">
             <button
@@ -101,7 +101,7 @@ const Navbar = () => {
       <div className="lg:hidden">
         <div
           id="menu"
-          className={`${isFixed2} flex-col items-center py-8 mt-5 font-bold backdrop-blur-xl left-6 right-6 shadow text-skin font-primary rounded-xl ${menu_class}`}
+          className={`${isFixed2} flex-col items-center py-8 mt-5 font-bold backdrop-blur-xl left-6 right-6 shadow text-skin font-primary rounded-xl ${menu_class} z-50`}
           onClick={Hamburger}
         >
           <ul className="flex flex-col justify-center items-center">
