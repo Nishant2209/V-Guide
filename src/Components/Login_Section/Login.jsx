@@ -10,7 +10,7 @@ const Login = () => {
     navigate("/SignUpPage");
   };
   return (
-    <div className="bg-gradient-to-r from-emerald-300 via-darkblue to-darkBlue font-primary h-[100vh] -mt-6">
+    <div className="bg-gradient-to-r from-emerald-300 via-darkblue to-darkBlue font-primary h-[100vh] -mt-6" data-aos="zoom-in">
       <div className="font-bold mt-6 flex justify-end">
         <div className="bg-skin px-5 py-1 mr-4 hover:scale-110 transition-all duration-400 ease-in-out text-lg rounded-full mt-4">
           <button onClick={routeChange1}>Home</button>
