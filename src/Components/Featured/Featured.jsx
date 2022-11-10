@@ -15,7 +15,7 @@ const Featured = () => {
         friendly .
       </p>
       <div className="featured grid space-y-5 md:space-y-0 md:grid-cols-2 lg:grid-cols-3 md:gap-y-5 container max-w-5xl my-5">
-        <div className="featuredItem flex flex-col justify-center items-center shadow1 w-3/4 rounded-3xl p-8 mx-auto">
+        <div className="featuredItem flex flex-col justify-center items-center shadow1 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
           <FaReact className="text-8xl font-extrabold mb-3 text-[#61dafb] bg-[#282c34]" />
           <div className="featuredTitles space-y-2">
             <div className="text-center text-6xl font-extrabold text-orange">
@@ -27,7 +27,7 @@ const Featured = () => {
           </div>
           <div className="featuredBg"></div>
         </div>
-        <div className="featuredItem flex flex-col justify-center items-center shadow2 w-3/4 rounded-3xl p-8 mx-auto">
+        <div className="featuredItem flex flex-col justify-center items-center shadow2 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
           <SiIos className="text-8xl mb-3 text-[#305428]" />
           <div className="featuredTitles space-y-2">
             <div className="text-center text-6xl font-extrabold text-orange">
@@ -39,7 +39,7 @@ const Featured = () => {
           </div>
           <div className="featuredBg"></div>
         </div>
-        <div className="featuredItem flex flex-col justify-center items-center shadow3 w-3/4 rounded-3xl p-8 mx-auto">
+        <div className="featuredItem flex flex-col justify-center items-center shadow3 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
           <SiHiveBlockchain className="text-8xl mb-3 text-[#220969]" />
           <div className="featuredTitles space-y-2">
             <div className="text-center text-6xl font-extrabold text-orange">
@@ -51,7 +51,7 @@ const Featured = () => {
           </div>
           <div className="featuredBg"></div>
         </div>
-        <div className="featuredItem flex flex-col justify-center items-center shadow1 w-3/4 rounded-3xl p-8 mx-auto">
+        <div className="featuredItem flex flex-col justify-center items-center shadow1 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
           <SiAndroidstudio className="text-8xl text-[#3ad17d] mb-3" />
           <div className="featuredTitles space-y-2">
             <div className="text-center text-6xl font-extrabold text-orange">
@@ -63,7 +63,7 @@ const Featured = () => {
           </div>
           <div className="featuredBg"></div>
         </div>
-        <div className="featuredItem flex flex-col justify-center items-center shadow2 w-3/4 rounded-3xl p-8 mx-auto">
+        <div className="featuredItem flex flex-col justify-center items-center shadow2 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
           <FaLaptopCode className="text-8xl mb-3 text-black" />
           <div className="featuredTitles space-y-2">
             <div className="text-center text-6xl font-extrabold text-orange">
@@ -73,7 +73,7 @@ const Featured = () => {
           </div>
           <div className="featuredBg"></div>
         </div>
-        <div className="featuredItem flex flex-col justify-center items-center shadow3 w-3/4 rounded-3xl p-8 mx-auto">
+        <div className="featuredItem flex flex-col justify-center items-center shadow3 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
           <GiArtificialIntelligence className="text-8xl mb-3 text-yellow-500" />
           <div className="featuredTitles space-y-2">
             <div className="text-center text-6xl font-extrabold text-orange">
