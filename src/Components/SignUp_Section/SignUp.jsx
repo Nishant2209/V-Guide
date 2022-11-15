@@ -92,7 +92,7 @@ const SignUp = () => {
             />
             <div className="mt-5 text-skin flex justify-center md:col-span-2">
               <button
-                className="hover-underline-animation"
+                className="hover-effect"
                 onClick={routeChange2}
               >
                 <center>Already Registered? Sign In</center>

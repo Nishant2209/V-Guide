@@ -35,7 +35,7 @@ const Login = () => {
               required
             />
             <div className="mt-5 text-skin flex justify-center">
-              <button className="hover-underline-animation" onClick={routeChange2}>
+              <button className="hover-effect" onClick={routeChange2}>
                 <center>New User? Register Here</center>
               </button>
             </div>
