@@ -8,7 +8,7 @@ function Footer_Dash() {
           <div class="flex flex-col space-y-3 md:flex-row md:h-full md:items-center">
             <div class="flex flex-col mt-4 f-defination md:w-1/2">
               <h2 class="text-4xl md:text-5xl my-1 font-bold text-[#E53F19] font-primary">
-                ViaDuct
+                V-Guide
               </h2>
               <p class=" text-lg  md:text-lg font-normal text-white w-2/3 md:w-3/4 md:px-2">
                 It is a virtual guidance platform that serves as a bridge
@@ -16,9 +16,7 @@ function Footer_Dash() {
               </p>
             </div>
             <div class="neo flex flex-col w-1/2 md:h-full md:justify-end md:items-end">
-              <p class="md:text-lg font-normal text-white">
-                Made with :heart: by
-              </p>
+              <p class="md:text-lg font-normal text-white">Made with ❤️ by</p>
               <h2 class="text-3xl md:my-1 font-bold text-[#E53F19] font-primary">
                 The Neophytes
               </h2>
@@ -27,7 +25,7 @@ function Footer_Dash() {
         </div>
         <div class="line h-[0.15rem] w-3/4 bg-[#5C6F89] rounded-xl"></div>
         <div class=" text-white md:mt-7">
-          <h4>© 2022 ViaDuct. All rigths reserved</h4>
+          <h4>© 2022 V-Guide All rights reserved</h4>
         </div>
       </div>
     </footer>
