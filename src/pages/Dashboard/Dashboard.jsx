@@ -1,5 +1,6 @@
 import Featured from "../../Components/Featured/Featured";
-import Header from "../../Components/Header/Header"; 
+import Header from "../../Components/Header/Header";
+import Footer_Dash from "../../Components/Footer_Dash/Footer_Dash";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -7,6 +8,7 @@ const Dashboard = () => {
     <div className="dash">
       <Header />
       <Featured />
+      <Footer_Dash />
     </div>
   );
 };
