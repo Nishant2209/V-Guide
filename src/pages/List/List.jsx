@@ -1,7 +1,6 @@
 import "./list.css";
 import Header from "../../Components/Header/Header";
 import SearchItem from "../../Components/Search_Item/SearchItem";
-import MailList from "../../Components/Mail_List/MailList";
 
 const List = () => {
   return (
@@ -22,7 +21,6 @@ const List = () => {
           </div>
         </div>
       </div>
-      <MailList />
     </div>
   );
 };
