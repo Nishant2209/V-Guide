@@ -10,7 +10,10 @@ const SignUp = () => {
     navigate("/LoginPage");
   };
   return (
-    <body className="bg-gradient-to-r from-emerald-300 via-darkblue to-darkBlue font-primary -mt-6 h-[100vh]" data-aos="zoom-in">
+    <body
+      className="bg-gradient-to-b from-[#b4b7cd] via-white to-[#f0d0cb] font-primary -mt-6 h-[100vh]"
+      data-aos="zoom-in"
+    >
       <div className="font-bold mt-6 flex justify-end">
         <div className="bg-skin px-5 py-1 mr-4 mt-4 hover:scale-110 transition-all duration-400 ease-in-out text-base rounded-full">
           <button onClick={routeChange1}>Home</button>
@@ -91,10 +94,7 @@ const SignUp = () => {
               required
             />
             <div className="mt-5 text-skin flex justify-center md:col-span-2">
-              <button
-                className="hover-effect"
-                onClick={routeChange2}
-              >
+              <button className="hover-effect" onClick={routeChange2}>
                 <center>Already Registered? Sign In</center>
               </button>
             </div>
