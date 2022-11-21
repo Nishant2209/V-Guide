@@ -11,7 +11,7 @@ const SignUp = () => {
   };
   return (
     <body
-      className="bg-gradient-to-b from-[#b4b7cd] via-white to-[#f0d0cb] font-primary -mt-6 h-[100vh]"
+      className="bg-gradient-to-r from-[#a0a6cf] via-white to-[#f1b9b1] font-primary -mt-6 h-[100vh]"
       data-aos="zoom-in"
     >
       <div className="font-bold mt-6 flex justify-end">
@@ -35,26 +35,26 @@ const SignUp = () => {
             <input
               type="text"
               placeholder="Full Name"
-              className="block mt-6 pl-2 md:ml-10 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 md:ml-10 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
             />
             <input
               type="text"
               placeholder="Roll Number"
-              className="block mt-6 pl-2 md:ml-10 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 md:ml-10 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               maxlength="14"
               required
             />
             <input
               type="text"
               placeholder="Branch"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
             />
             <select
               name="option"
               id="option"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
             >
               <option value="" className="text-black">
                 Select your type
@@ -69,32 +69,32 @@ const SignUp = () => {
             <input
               type="email"
               placeholder="E-mail"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
             />
             <input
               type="tel"
               placeholder="Phone"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               maxlength="10"
               required
             />
             <input
               type="password"
               placeholder="Password"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               minlength="6"
               required
             />
             <input
               type="password"
               placeholder="Confirm Password"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               minlength="6"
               required
             />
-            <div className="mt-5 text-skin flex justify-center md:col-span-2">
-              <button className="hover-effect" onClick={routeChange2}>
+            <div className="mt-5 text-veryDarkBlue flex justify-center md:col-span-2">
+              <button className="hover-underline-animation" onClick={routeChange2}>
                 <center>Already Registered? Sign In</center>
               </button>
             </div>

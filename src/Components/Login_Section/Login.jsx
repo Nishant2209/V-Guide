@@ -11,7 +11,7 @@ const Login = () => {
   };
   return (
     <div
-      className="bg-gradient-to-b from-[#b4b7cd] via-white to-[#f0d0cb] font-primary h-[100vh] -mt-6"
+      className="bg-gradient-to-r from-[#a0a6cf] via-white to-[#f1b9b1] font-primary h-[100vh] -mt-6"
       data-aos="zoom-in"
     >
       <div className="font-bold mt-6 flex justify-end">
@@ -32,17 +32,17 @@ const Login = () => {
             <input
               type="email"
               placeholder="E-mail"
-              className="block mt-8 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-8 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
             />
             <input
               type="password"
               placeholder="Password"
-              className="block mt-8 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-8 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
             />
-            <div className="mt-5 text-skin flex justify-center">
-              <button className="hover-effect" onClick={routeChange2}>
+            <div className="mt-5 flex justify-center">
+              <button className="hover-underline-animation" onClick={routeChange2}>
                 <center>New User? Register Here</center>
               </button>
             </div>
