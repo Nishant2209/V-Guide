@@ -5,7 +5,7 @@ import "./Dashboard.css";
 
 const Dashboard = () => {
   return (
-    <div className="dash">
+    <div className="dash" data-aos="fade-in">
       <Header />
       <Featured />
       <Footer_Dash />

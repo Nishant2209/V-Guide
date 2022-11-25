@@ -6,7 +6,7 @@ import Footer from "../../Components/Footer_Dash/Footer_Dash";
 
 const LandingPage = () => {
   return (
-    <>
+    <div data-aos="fade-in">
       <Hero />
       <hr className="bg-veryDarkBlue h-1" />
       <Features />
@@ -15,7 +15,7 @@ const LandingPage = () => {
       <hr className="bg-veryDarkBlue h-1" />
       <Testimonials />
       <Footer />
-    </>
+    </div>
   );
 };
 
