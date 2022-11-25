@@ -50,11 +50,11 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`navbar flex justify-center py-5 transition-all 5s `}
+        className="navbar flex justify-center py-5 transition-all 5s"
       >
         <div className={`navContainer flex justify-between w-11/12 lg:w-3/4 py-3 px-8 lg:px-16 items-center rounded-lg text-veryDarkBlue ${isFixed1}`}>
           {/* Hamburger Menu */}
-          <div className="lg:hidden">
+          <div className="lg:hidden"> 
             <button
               className={`hamburg lg:hidden focus:outline-none ${burger_class}`}
               id="menu-btn"
