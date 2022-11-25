@@ -1,89 +1,14 @@
-.hover-effect {
-    display: inline-block;
-    position: relative;
-    color: #F8F1F1;
-    cursor: pointer;
-}
-  
-.hover-effect:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #F8F1F1;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-  
-.hover-effect:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-  background-color: #F8F1F1;
-}
-
-nav{
-    transition: 0.25s ease-in-out;
-  }
-
-.hamburger{
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    transition: all 0.25s;
-    position: relative;
-    transform: rotate(90deg);
-  }
-  
-  .hamburger-top, .hamburger-middle, .hamburger-bottom{
-    position: absolute;
-    top:-7px;
-    right: 20px;
-    height: 30px;
-    width: 3px;
-    background: #F8F1F1;
-    transform: rotate(0deg);
-    transition: all 0.25s;
-  }
-  
-  .hamburger-middle{
-    transform: translateX(7px);
-  }
-  .hamburger-bottom{
-    transform: translateX(14px);
-  }
-  
-  .open{
-    transform: rotate(90deg);
-    transform: translateY(0px);
-  }
-  .open .hamburger-top{
-    transform: rotate(45deg) translateY(6px) translateX(6px);
-    top: -14px;
-    right: 0px;
-  }
-  
-  .open .hamburger-middle{
-    display: none;
-  }
-  
-  .open .hamburger-bottom{
-    transform: rotate(-45deg) translateY(6px) translateX(-6px);
-    top: -14px;
-    right: 0px;
-  }
-  .navbar {
-    transition: 0.25s ease-in-out;
-  }
-    
   .Sticky{
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 1rem;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     transition: 0.25s ease-in-out;
-    background-color: #11698e;
+  }
+
+  @media(max-width: 976px) {
+    .Sticky{
+      padding: 1rem;
+    }
   }
