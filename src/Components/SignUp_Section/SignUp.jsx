@@ -12,10 +12,10 @@ const SignUp = () => {
   return (
     <body
       className="bg-gradient-to-r from-[#a0a6cf] via-white to-[#f1b9b1] font-primary -mt-6 h-[100vh]"
-      data-aos="zoom-in"
+      data-aos="fade-in"
     >
       <div className="font-bold mt-6 flex justify-end">
-        <div className="bg-skin px-5 py-1 mr-4 mt-4 hover:scale-110 transition-all duration-400 ease-in-out text-base rounded-full">
+        <div className="bg-transparent px-5 py-1 mr-4 mt-4 transition-all duration-400 ease-in-out text-base rounded-md border-2 border-veryDarkBlue text-veryDarkBlue">
           <button onClick={routeChange1}>Home</button>
         </div>
       </div>
@@ -94,16 +94,19 @@ const SignUp = () => {
               required
             />
             <div className="mt-5 text-veryDarkBlue flex justify-center md:col-span-2">
-              <button className="hover-underline-animation" onClick={routeChange2}>
+              <button
+                className="hover-underline-animation"
+                onClick={routeChange2}
+              >
                 <center>Already Registered? Sign In</center>
               </button>
             </div>
             <div className="block mx-auto mt-6 text-black text-base md:col-span-2 text-center">
               <button
                 type="submit"
-                className="bg-skin px-5 py-1 hover:scale-110 transition-all duration-300 ease-in-out font-bold rounded-full"
+                className="bg-veryDarkBlue text-skin px-5 py-1 hover:scale-110 transition-all duration-300 ease-in-out font-bold rounded-md hover:bg-transparent hover:text-veryDarkBlue hover:border-veryDarkBlue hover:border-2"
               >
-                Register
+                Sign Up
               </button>
             </div>
           </form>
