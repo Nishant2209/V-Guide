@@ -32,9 +32,7 @@ function Navbar() {
     if (window !== undefined) {
       let windowHeight = window.scrollY;
       // window height changed for the demo
-      windowHeight > 40
-        ? setStickyClass("Sticky")
-        : setStickyClass("");
+      windowHeight > 40 ? setStickyClass("Sticky") : setStickyClass("");
     }
   };
 
