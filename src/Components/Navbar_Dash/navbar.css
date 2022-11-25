@@ -3,6 +3,7 @@
   position: relative;
   color: #0C2D4A;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .hover-underline-animation:after {
