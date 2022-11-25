@@ -9,10 +9,10 @@ function About() {
 
   return (
     <section className="About-Us" id="About_Us">
-      <div className="bg-gradient-to-t from-[#f0d0cb] via-white to-[#b4b7cd] mx-auto p-4 md:px-8 pb-20 py-20 md:py-32">
+      <div className="bg-gradient-to-t from-[#f0d0cb] via-white to-[#b4b7cd] text-veryDarkBlue mx-auto p-4 md:px-8 pb-20 py-20 md:py-32">
         <h2 className="text-center text-5xl md:text-6xl font-bold m-6 pb-10 font-primary">
-          About Us
-          <hr className="h-1 w-7/12 lg:w-1/4 mx-auto bg-black" />
+          About <span className="text-orange">Us</span>
+          <hr className="h-1 w-7/12 lg:w-1/4 mx-auto bg-veryDarkBlue" />
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 p-4 mx-10 md:mx-5">
           <div className="md:container m-auto md:col-span-2 flex justify-center">

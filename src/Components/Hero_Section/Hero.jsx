@@ -18,11 +18,12 @@ function Hero() {
       id="Hero_Section"
     >
       <Navbar />
-      <div className="flex flex-col-reverse md:flex-row mx-auto pb-20 md:pb-0 items-center md:px-28 md:mt-10">
+      <div className="flex flex-col-reverse md:flex-row mx-auto pb-20 md:pb-0 items-center md:px-28 md:mt-10 text-veryDarkBlue">
         {/* Left */}
         <div className="content flex flex-col space-y-10 md:w-1/2">
           <h1 className="text-4xl text-center leading-tight font-bold md:text-5xl md:text-left md:leading-tight font-primary">
-            Find Your Mentor in one click.
+            Find Your <span className="text-orange font-extrabold">Mentor</span>{" "}
+            in one click.
           </h1>
           {/* <span class="font-cursive font-light">Mentor</span> */}
           <p className="text-xl text-center font-semibold leading-8 md:leading-10 md:text-left md:text-lg font-secondary">

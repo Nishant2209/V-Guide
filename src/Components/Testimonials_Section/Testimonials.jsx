@@ -4,10 +4,10 @@ function Testimonials() {
   return (
     <>
       <section className="Testimonials" id="Testimonials">
-        <div className="bg-gradient-to-t from-[#b4b7cd] via-white to-[#f0d0cb] mx-auto p-4 md:px-8 pb-20 py-20 md:py-32">
+        <div className="bg-gradient-to-t from-[#b4b7cd] via-white to-[#f0d0cb] text-veryDarkBlue mx-auto p-4 md:px-8 pb-20 py-20 md:py-32">
           <div className="text-center text-5xl md:text-6xl font-bold m-6 font-primary">
-            <h2>Testimonials</h2>
-            <hr className="h-1 w-9/12 lg:w-1/3 mx-auto bg-black" />
+            <h2>Testi<span className="text-orange">monials</span></h2>
+            <hr className="h-1 w-9/12 lg:w-1/3 mx-auto bg-veryDarkBlue" />
           </div>
           <div className="flex flex-col space-y-10 lg:space-y-0 lg:space-x-14 xl:space-x-32 lg:flex-row items-center justify-evenly md:mt-20 mx-10 md:mx-20 lg:mx-5 xl:mx-20">
             <div className="bg-transparent shadow-class transition ease-in-out w-auto text-center m-0 p-3 text-white rounded-2xl text-xl mt-5 lg:mt-0 hover:scale-110" data-aos="zoom-in"

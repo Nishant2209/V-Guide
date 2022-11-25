@@ -3,13 +3,13 @@ import React from "react";
 function Features() {
   return (
     <section
-      className="Feature_Section bg-gradient-to-t from-[#b4b7cd] via-white to-[#f0d0cb]"
+      className="Feature_Section "
       id="Feature_Section"
     >
-      <div className="py-20 md:pt-28 md:pb-52">
+      <div className="bg-gradient-to-t from-[#b4b7cd] via-white to-[#f0d0cb] text-veryDarkBlue py-20 md:pt-28 md:pb-52">
         <h2 className="text-center text-5xl md:text-6xl font-bold m-6 pb-10 font-primary leading-[60px]">
-          What makes us Different ?
-          <hr className="h-1 w-10/12 lg:w-7/12 mx-auto bg-black" />
+          What makes us <span className="text-orange">Different</span> ?
+          <hr className="h-1 w-10/12 lg:w-7/12 mx-auto bg-veryDarkBlue" />
         </h2>
         <div className="flex flex-col rounded-md space-y-6 max-w-full md:space-x-5 md:justify-center md:flex-row mx-auto p-4 items-center md:px-14">
           <div
