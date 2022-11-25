@@ -2,7 +2,7 @@ import Hero from "../../Components/Hero_Section/Hero";
 import Features from "../../Components/Features_Section/Features";
 import About from "../../Components/About_Section/About";
 import Testimonials from "../../Components/Testimonials_Section/Testimonials";
-import Footer from "../../Components/Footer_Land/Footer_Land";
+import Footer from "../../Components/Footer_Dash/Footer_Dash";
 
 const LandingPage = () => {
   return (
