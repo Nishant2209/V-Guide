@@ -18,8 +18,12 @@ const Navbar = () => {
     if (window !== undefined) {
       let windowHeight = window.scrollY;
       // window height changed for the demo
-      windowHeight > 20 ? setFixed1Class("fixed w-full shadow backdrop-blur-xl z-[99999]") : setFixed1Class("");
-      windowHeight > 20 ? setFixed2Class("fixed top-24") : setFixed2Class("absolute");
+      windowHeight > 20
+        ? setFixed1Class("fixed w-full shadow backdrop-blur-xl z-[99999]")
+        : setFixed1Class("");
+      windowHeight > 20
+        ? setFixed2Class("fixed top-24")
+        : setFixed2Class("absolute");
     }
   };
 
@@ -47,14 +51,18 @@ const Navbar = () => {
     navigate("/SignUpPage");
   };
 
+  const routeChange3 = () => {
+    navigate("/");
+  };
+
   return (
     <>
-      <div
-        className="navbar flex justify-center py-5 transition-all 5s"
-      >
-        <div className={`navContainer flex justify-between w-11/12 lg:w-3/4 py-3 px-8 lg:px-16 items-center rounded-lg text-veryDarkBlue ${isFixed1}`}>
+      <div className="navbar flex justify-center py-5 transition-all 5s">
+        <div
+          className={`navContainer flex justify-between w-11/12 lg:w-3/4 py-3 px-8 lg:px-16 items-center rounded-lg text-veryDarkBlue ${isFixed1}`}
+        >
           {/* Hamburger Menu */}
-          <div className="lg:hidden"> 
+          <div className="lg:hidden">
             <button
               className={`hamburg lg:hidden focus:outline-none ${burger_class}`}
               id="menu-btn"
@@ -65,7 +73,10 @@ const Navbar = () => {
               <span className="hamburg-bottom" />
             </button>
           </div>
-          <div className="text-veryDarkBlue font-extrabold text-2xl lg:text-3xl">
+          <div
+            className="text-veryDarkBlue font-extrabold text-2xl lg:text-3xl cursor-pointer"
+            onClick={routeChange3}
+          >
             V- Guide
           </div>
           <div className="hidden lg:block">
