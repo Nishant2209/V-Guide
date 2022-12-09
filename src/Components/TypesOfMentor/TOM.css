@@ -1,0 +1,17 @@
+.typeOfMentors {
+    box-shadow: 0px 0px 185px rgba(229, 63, 25, 0.36);
+    border-radius: 25px;
+    background: linear-gradient(
+      90.26deg,
+      rgba(229, 63, 25, 0.21) 0.19%,
+      rgba(175, 59, 37, 0.15) 22.53%,
+      rgba(61, 49, 63, 0.15) 76.57%,
+      rgba(12, 45, 74, 0.21) 99.74%
+    );
+  }
+  .tomheading{
+    text-shadow: 5px 4px 30px rgba(0, 0, 0, 0.5);
+  }
+  .defbox{
+    box-shadow: 23px 10px 100px rgba(12, 45, 74, 0.25);
+  }
