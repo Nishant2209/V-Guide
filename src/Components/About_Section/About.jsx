@@ -14,7 +14,7 @@ function About() {
           About <span className="text-orange">Us</span>
           <hr className="h-1 w-7/12 lg:w-1/4 mx-auto bg-veryDarkBlue" />
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 p-4 mx-10 md:mx-5">
+        <div className="grid grid-cols-1 md:grid-cols-4 p-4 md:mx-5">
           <div className="md:container m-auto md:col-span-2 flex justify-center">
             <img
               src="images/img1.png"
