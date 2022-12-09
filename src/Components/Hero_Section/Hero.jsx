@@ -26,7 +26,7 @@ function Hero() {
             in one click.
           </h1>
           {/* <span class="font-cursive font-light">Mentor</span> */}
-          <p className="text-xl text-center font-semibold leading-8 md:leading-10 md:text-left md:text-lg font-secondary">
+          <p className="text-lg text-center leading-8 md:leading-10 md:text-left md:text-lg font-secondary">
             V guide is a Virtual platform for mentors and mentees to
             collobrate,discuss and stay concentrated on their learning and
             growth.
@@ -39,7 +39,7 @@ function Hero() {
               Find Mentor
             </button>
             <button
-              className="text-lg transition ease delay-150 bg-veryDarkBlue text-white rounded-xl px-9 py-3 border-2 hover:bg-transparent font-semibold hover:text-veryDarkBlue hover:border-veryDarkBlue"
+              className="text-lg transition ease delay-150 bg-veryDarkBlue text-white rounded-xl px-9 py-3 border-2 hover:bg-transparent font-semibold hover:text-veryDarkBlue border-veryDarkBlue"
               onClick={routeChange1}
             >
               Become Mentor
