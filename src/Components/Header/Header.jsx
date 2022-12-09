@@ -2,9 +2,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
 import { useState } from "react";
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar_Dash/Navbar";
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -15,43 +14,34 @@ const Header = ({ type }) => {
     navigate("/mentors", { state: { destination } });
   };
 
-  const routeChange = () => {
-    navigate("/");
-  };
-
   return (
-    <div className="header">
-      <div
-        className={
-          type === "list" ? "headerContainer listMode" : "headerContainer"
-        }
-      >
-        {type !== "list" && (
-          <>
-            <h1 className="headerTitle">Need a mentor? V-Guide is here.</h1>
-            <p className="headerDesc">Find you mentor in just one click.</p>
-            <button className="headerBtn1" onClick={routeChange}>
-              Home
-            </button>
-            <div className="headerSearch">
-              <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faSearch} className="headerIcon" />
-                <input
-                  type="text"
-                  placeholder="What's your domain?"
-                  className="headerSearchInput"
-                  onChange={(e) => setDestination(e.target.value)}
-                />
-              </div>
-              <div className="headerSearchItem">
-                <button className="headerBtn2" onClick={handleSearch}>
-                  Search
-                </button>
-              </div>
-            </div>
-          </>
-        )}
+    <div className="header bg-gradient-to-b from-[#b4b7cd] via-white to-[#f0d0cb] text-veryDarkBlue z-0">
+      <Navbar />
+      <div className="headerContainer flex flex-col justify-center items-center">
+        <p className="headerTitle text-5xl mx-6 md:text-5xl lg:text-7xl my-5 t-shadow text-center">
+          Find your <span className="text-orange font-extrabold">Guru</span> !
+        </p>
+        <p className="headerDesc font-bold text-md lg:text-xl md:w-2/3 lg:w-1/3 text-center my-5 leading-9 px-7">
+          Get the guidance from the mentors around you who are accessible and
+          friendly.
+        </p>
+        <div className="headerSearch shadow-class w-1/2 bg-white py-4 px-4 lg:px-8 rounded-lg mt-5 -mb-8 ">
+          <div className="headerSearchItem flex flex-row justify-between items-center">
+            <input
+              type="text"
+              placeholder="What's your domain?"
+              className="headerSearchInput"
+              onChange={(e) => setDestination(e.target.value)}
+            />
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="headerIcon border-[3px] p-3 rounded-full border-veryDarkBlue bg-lightGray text-orange cursor-pointer"
+              onClick={handleSearch}
+            />
+          </div>
+        </div>
       </div>
+      <hr className="bg-gray-600 h-[3px]" />
     </div>
   );
 };

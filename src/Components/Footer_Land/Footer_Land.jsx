@@ -1,6 +1,6 @@
 import React from "react";
 
-function Footer() {
+function Footer_Land() {
   return (
     <footer className="Footer flex flex-col" id="Footer">
       <div className="flex bg-darkblue h-64 w-full">
@@ -103,4 +103,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Footer_Land;

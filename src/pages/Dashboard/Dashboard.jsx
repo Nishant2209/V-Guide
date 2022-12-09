@@ -1,18 +1,17 @@
 import Featured from "../../Components/Featured/Featured";
 import Header from "../../Components/Header/Header";
-import MailList from "../../Components/Mail_List/MailList";
-import Navbar from "../../Components/Navbar_Dash/Navbar";
-import "./dashboard.css";
+import Footer_Dash from "../../Components/Footer_Dash/Footer_Dash";
+import TOM from "../../Components/TypesOfMentor/TOM";
+
+import "./Dashboard.css";
 
 const Dashboard = () => {
   return (
-    <div>
-      <Navbar />
+    <div className="dash" data-aos="fade-in">
       <Header />
-      <div className="homeContainer">
-        <Featured />
-        <MailList />
-      </div>
+      <Featured />
+      <TOM />
+      <Footer_Dash />
     </div>
   );
 };

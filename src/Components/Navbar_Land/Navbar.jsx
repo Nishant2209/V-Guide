@@ -32,35 +32,36 @@ function Navbar() {
     if (window !== undefined) {
       let windowHeight = window.scrollY;
       // window height changed for the demo
-      windowHeight > 20 ? setStickyClass("Sticky") : setStickyClass("");
+      windowHeight > 40 ? setStickyClass("Sticky") : setStickyClass("");
     }
   };
 
   let navigate = useNavigate();
   const routeChange = () => {
-    navigate('/Dashboard');
+    navigate("/Dashboard");
   };
 
   return (
     <React.Fragment>
-      <section className="bg-skin">
+      <section>
         <nav
-          className={`navbar relative mx-auto p-5 px-10 md:px-8 bg-darkblue z-10 ${stickyClass}`}
+          className={`navbar flex justify-center mx-auto p-5 lg:px-10 z-50 px-2 md:px-0 ${stickyClass}`}
         >
           {/* flex  conatiner*/}
-          <div className="Sticky flex flex-row justify-between md:flex-row items-center md:justify-around m-auto">
+          <div className=" flex justify-between w-11/12 py-3 px-8 lg:px-20 items-center rounded-xl z-50 backdrop-blur-xl shadow">
             {/* Logo  */}
             <div className="flex justify-center items-center">
               <div>
                 <img
                   src="images/logo.png"
                   alt="V-Guide"
-                  className="w-12 md:w-16 rounded-xl md:rounded-2xl"
+                  className="w-12 md:w-16 rounded-xl md:rounded-2xl shadow-orange"
                 />
               </div>
             </div>
+
             {/* Items */}
-            <div className="hidden md:flex md:justify-center space-x-6 text-xl">
+            <div className="hidden lg:flex lg:justify-center space-x-6 text-xl">
               <a href="#Hero_Section" className="hover-underline-animation">
                 Home
               </a>
@@ -77,33 +78,36 @@ function Navbar() {
                 Contact
               </a>
             </div>
+
             {/* Buttons */}
-            <div className="button hidden md:block">
+            <div className="button hidden lg:block">
               <button
-                className="text-lg font-medium transition ease-in-out delay-150 bg-skin text-darkblue rounded-full px-7 py-2 border-2 hover:bg-transparent hover:border-skin hover:text-skin" onClick={routeChange}
+                className="text-lg font-bold transition ease-in-out delay-150 bg-transparent text-veryDarkBlue rounded-xl px-4 py-1 border-2 border-veryDarkBlue"
+                onClick={routeChange}
               >
                 Dashboard
               </button>
             </div>
+
             {/* Hamburger Menu */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               {" "}
               <button
-                className={`hamburger md:hidden focus:outline-none ${burger_class}`}
+                className={`hamburg lg:hidden focus:outline-none ${burger_class}`}
                 id="menu-btn"
                 onClick={Hamburger}
               >
-                <span className="hamburger-top" />
-                <span className="hamburger-middle" />
-                <span className="hamburger-bottom" />
+                <span className="hamburg-top" />
+                <span className="hamburg-middle" />
+                <span className="hamburg-bottom" />
               </button>
             </div>
           </div>
           {/* Mobile Menu */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <div
               id="menu"
-              className={`absolute flex-col items-center py-8 mt-20 space-y-6 font-bold bg-darkblue left-6 right-6 drop-shadow-md text-skin font-primary rounded-lg ${menu_class}`}
+              className={`absolute flex-col items-center py-8 mt-20 md:mt-28 space-y-6 font-bold bg-veryDarkBlue left-6 right-6 drop-shadow-md text-skin font-primary rounded-lg ${menu_class}`}
               onClick={Hamburger}
             >
               <a href="#Hero_Section">Home</a>
@@ -112,7 +116,7 @@ function Navbar() {
               <a href="#Testimonials">Testimonials</a>
               <a href="#Footer">Contact</a>
               <button
-                className="font-bold transition ease-in-out delay-150 bg-skin text-darkblue rounded-full px-7 py-2 border-2 hover:bg-transparent hover:border-skin hover:text-skin"
+                className="font-bold transition ease-in-out delay-150 bg-transparent text-skin rounded-xl px-7 py-2 border-2"
                 onClick={routeChange}
               >
                 Dashboard

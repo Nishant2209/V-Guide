@@ -1,80 +1,90 @@
+import { FaReact, FaLaptopCode } from "react-icons/fa";
+import { SiAndroidstudio, SiHiveBlockchain, SiIos } from "react-icons/si";
+import { GiArtificialIntelligence } from "react-icons/gi";
 import "./featured.css";
 
 const Featured = () => {
   return (
-    <div className="featured">
-      <div className="featuredItem">
-        <img
-          src="https://www.reachfirst.com/wp-content/uploads/2018/08/Web-Development.jpg"
-          alt=""
-          className="featuredImg"
-        />
-        <div className="featuredTitles">
-          <h1>Web Development</h1>
-          <h2>12 Mentors</h2>
-        </div>
-        <div className="featuredBg"></div>
+    <div className="flex flex-col justify-center items-center my-20 text-veryDarkBlue t-shadow">
+      <hr className="bg-veryDarkBlue h-[2px] w-[90%]" />
+      <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold my-5">
+        Available Mentors
       </div>
-      
-      <div className="featuredItem">
-        <img
-          src="https://www.w2ssolutions.com/blog/wp-content/uploads/2019/07/ios-app-development-india.png"
-          alt=""
-          className="featuredImg"
-        />
-        <div className="featuredTitles">
-          <h1>IOS Development</h1>
-          <h2>5 Mentors</h2>
+      <p className="headerDesc font-bold text-md lg:text-xl px-4 md:w-2/3 lg:w-1/3 text-center my-5 leading-9">
+        Get the guidance from the mentors around you who are accessible and
+        friendly .
+      </p>
+      <div className="featured grid space-y-5 md:space-y-0 md:grid-cols-2 lg:grid-cols-3 md:gap-y-5 container max-w-5xl my-5 z-0">
+        <div className="featuredItem flex flex-col justify-center items-center shadow1 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
+          <FaReact className="text-8xl font-extrabold mb-3 text-[#61dafb] bg-[#282c34]" />
+          <div className="featuredTitles space-y-2">
+            <div className="text-center text-6xl font-extrabold text-orange">
+              12 +
+            </div>
+            <div className="text-center text-lg font-semibold">
+              Web Development Mentors
+            </div>
+          </div>
+          <div className="featuredBg"></div>
         </div>
-        <div className="featuredBg"></div>
-      </div>
-      <div className="featuredItem">
-        <img
-          src="https://reliasoftware.com/static/9ce8aa204a21e69716018fee472b042c/the-complete-guide-to-mobile-app-development-2021.png"
-          alt=""
-          className="featuredImg"
-        />
-        <div className="featuredTitles">
-          <h1>App Development</h1>
-          <h2>10 Mentors</h2>
+        <div className="featuredItem flex flex-col justify-center items-center shadow2 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
+          <SiIos className="text-8xl mb-3 text-[#305428]" />
+          <div className="featuredTitles space-y-2">
+            <div className="text-center text-6xl font-extrabold text-orange">
+              12 +
+            </div>
+            <div className="text-center text-lg font-semibold">
+              iOS Development Mentors
+            </div>
+          </div>
+          <div className="featuredBg"></div>
         </div>
-        <div className="featuredBg"></div>
-      </div>
-      <div className="featuredItem">
-        <img
-          src="https://repository-images.githubusercontent.com/403817624/3d10f761-1027-4d0a-9906-48361e466d87"
-          alt=""
-          className="featuredImg"
-        />
-        <div className="featuredTitles">
-          <h1>DSA</h1>
-          <h2>20 Mentors</h2>
+        <div className="featuredItem flex flex-col justify-center items-center shadow3 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
+          <SiHiveBlockchain className="text-8xl mb-3 text-[#220969]" />
+          <div className="featuredTitles space-y-2">
+            <div className="text-center text-6xl font-extrabold text-orange">
+              12 +
+            </div>
+            <div className="text-center text-lg font-semibold">
+              Blockchain Mentors
+            </div>
+          </div>
+          <div className="featuredBg"></div>
         </div>
-        <div className="featuredBg"></div>
-      </div>
-      <div className="featuredItem">
-        <img
-          src="https://www.perfecto.io/sites/default/files/image/2020-09/social-blog-classifying-ai-ml-tools-2.jpg"
-          alt=""
-          className="featuredImg"
-        />
-        <div className="featuredTitles">
-          <h1>AI/ML</h1>
-          <h2>5 Mentors</h2>
+        <div className="featuredItem flex flex-col justify-center items-center shadow1 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
+          <SiAndroidstudio className="text-8xl text-[#3ad17d] mb-3" />
+          <div className="featuredTitles space-y-2">
+            <div className="text-center text-6xl font-extrabold text-orange">
+              12 +
+            </div>
+            <div className="text-center text-md font-bold">
+              Android Development Mentors
+            </div>
+          </div>
+          <div className="featuredBg"></div>
         </div>
-        <div className="featuredBg"></div>
-      </div>
-      <div className="featuredItem">
-        <img
-          src="https://www.patriotsoftware.com/wp-content/uploads/2022/01/what-is-blockchain-1.jpg"
-          alt=""
-          className="featuredImg"
-        />
-        <div className="featuredTitles">
-          <h1>Blockchain</h1>
-          <h2>3 Mentors</h2>
+        <div className="featuredItem flex flex-col justify-center items-center shadow2 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
+          <FaLaptopCode className="text-8xl mb-3 text-black" />
+          <div className="featuredTitles space-y-2">
+            <div className="text-center text-6xl font-extrabold text-orange">
+              12 +
+            </div>
+            <div className="text-center text-lg font-semibold">DSA Mentors</div>
+          </div>
+          <div className="featuredBg"></div>
         </div>
-        <div className="featuredBg"></div>
+        <div className="featuredItem flex flex-col justify-center items-center shadow3 w-3/4 rounded-3xl p-8 mx-auto" data-aos="zoom-in">
+          <GiArtificialIntelligence className="text-8xl mb-3 text-yellow-500" />
+          <div className="featuredTitles space-y-2">
+            <div className="text-center text-6xl font-extrabold text-orange">
+              12 +
+            </div>
+            <div className="text-center text-lg font-semibold">
+              AI/ML Mentors
+            </div>
+          </div>
+          <div className="featuredBg"></div>
+        </div>
       </div>
     </div>
   );

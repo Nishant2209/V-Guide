@@ -10,9 +10,12 @@ const SignUp = () => {
     navigate("/LoginPage");
   };
   return (
-    <body className="bg-gradient-to-r from-emerald-300 via-darkblue to-darkBlue font-primary -mt-6 h-[100vh]">
+    <body
+      className="bg-gradient-to-r from-[#a0a6cf] via-white to-[#f1b9b1] font-primary -mt-6 h-[100vh]"
+      data-aos="fade-in"
+    >
       <div className="font-bold mt-6 flex justify-end">
-        <div className="bg-skin px-5 py-1 mr-4 mt-4 hover:scale-110 transition-all duration-400 ease-in-out text-base rounded-full">
+        <div className="bg-transparent px-5 py-1 mr-4 mt-4 transition-all duration-400 ease-in-out text-base rounded-md border-2 border-veryDarkBlue text-veryDarkBlue">
           <button onClick={routeChange1}>Home</button>
         </div>
       </div>
@@ -32,26 +35,26 @@ const SignUp = () => {
             <input
               type="text"
               placeholder="Full Name"
-              className="block mt-6 pl-2 md:ml-10 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 md:ml-10 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
             />
             <input
               type="text"
               placeholder="Roll Number"
-              className="block mt-6 pl-2 md:ml-10 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 md:ml-10 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               maxlength="14"
               required
             />
             <input
               type="text"
               placeholder="Branch"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
             />
             <select
               name="option"
               id="option"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
             >
               <option value="" className="text-black">
                 Select your type
@@ -66,31 +69,31 @@ const SignUp = () => {
             <input
               type="email"
               placeholder="E-mail"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
             />
             <input
               type="tel"
               placeholder="Phone"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               maxlength="10"
               required
             />
             <input
               type="password"
               placeholder="Password"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               minlength="6"
               required
             />
             <input
               type="password"
               placeholder="Confirm Password"
-              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-skin border-2 bg-transparent text-skin placeholder-skin shadow-xl"
+              className="block mt-6 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               minlength="6"
               required
             />
-            <div className="mt-5 text-skin flex justify-center md:col-span-2">
+            <div className="mt-5 text-veryDarkBlue flex justify-center md:col-span-2">
               <button
                 className="hover-underline-animation"
                 onClick={routeChange2}
@@ -101,9 +104,9 @@ const SignUp = () => {
             <div className="block mx-auto mt-6 text-black text-base md:col-span-2 text-center">
               <button
                 type="submit"
-                className="bg-skin px-5 py-1 hover:scale-110 transition-all duration-300 ease-in-out font-bold rounded-full"
+                className="bg-veryDarkBlue text-skin px-5 py-1 hover:scale-110 transition-all duration-300 ease-in-out font-bold rounded-md hover:bg-transparent hover:text-veryDarkBlue hover:border-veryDarkBlue hover:border-2"
               >
-                Register
+                Sign Up
               </button>
             </div>
           </form>
