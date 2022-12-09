@@ -86,7 +86,7 @@ background-color: #0C2D4A;
   }
   @media(max-width: 976px) {
     .Sticky{
-      padding: 1rem;
+      padding: 1rem 0.5rem 1rem 0.5rem;
     }
   }
   
