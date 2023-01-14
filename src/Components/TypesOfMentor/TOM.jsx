@@ -18,7 +18,7 @@ function TOM() {
           className="defbox alpha flex flex-col md:flex-row space-y-4 lg:space-y-0 items-center self-start justify-around p-5 md:w-[48%] bg-[#d9d9d912] rounded-lg text-center lg:text-left"
           data-aos="zoom-out-down"
         >
-          <img src="./images/alpha-icon 1.png" alt="" className="h-24" />
+          <img src="./images/alpha-icon.png" alt="" className="h-24" />
           <p className="text-md lg:text-lg md:w-3/5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
             labore, modi, numquam tempora ducimus necessitatibus molestiae
@@ -29,7 +29,7 @@ function TOM() {
           className="defbox beta flex flex-col self-end md:flex-row space-y-4 lg:space-y-0 items-center justify-around p-5 md:w-[48%] bg-[#d9d9d912] rounded-lg text-center lg:text-left"
           data-aos="zoom-out-down"
         >
-          <img src="./images/alpha-icon 1.png" alt="" className="h-24" />
+          <img src="./images/beta-icon.png" alt="" className="h-28" />
           <p className="text-md lg:text-lg md:w-3/5">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Necessitatibus doloribus, architecto numquam nobis eveniet
@@ -41,7 +41,7 @@ function TOM() {
           className="defbox gama flex flex-col md:flex-row space-y-4 lg:space-y-0 items-center justify-around p-5 md:w-[48%] bg-[#d9d9d912] rounded-lg text-center lg:text-left"
           data-aos="zoom-out-down"
         >
-          <img src="./images/alpha-icon 1.png" alt="" className="h-24" />
+          <img src="./images/gamma-icon.png" alt="" className="h-28" />
           <p className="text-md lg:text-lg md:w-3/5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
             iste, dolor vel ad, error quaerat reiciendis iusto ex repudiandae
