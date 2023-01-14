@@ -11,7 +11,7 @@ const Header = ({ type }) => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    navigate("/mentors", { state: { destination } });
+    navigate("/Mentors", { state: { destination } });
   };
 
   return (
