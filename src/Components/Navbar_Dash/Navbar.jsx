@@ -49,6 +49,10 @@ const Navbar = () => {
     navigate("/");
   };
 
+  const routeChange4 = () => {
+    navigate("/Dashboard");
+  };
+
   return (
     <>
       <div
@@ -78,7 +82,10 @@ const Navbar = () => {
 
           <div className="hidden lg:block">
             <ul className="flex row">
-              <li className="mr-10 font-semibold hover-underline-animation">
+              <li
+                className="mr-10 font-semibold hover-underline-animation"
+                onClick={routeChange4}
+              >
                 Home
               </li>
               <li className="mr-10 font-semibold hover-underline-animation">
@@ -112,9 +119,11 @@ const Navbar = () => {
             className={`absolute flex-col items-center py-8 mt-20 md:mt-28 space-y-6 font-bold bg-veryDarkBlue left-6 right-6 drop-shadow-md text-skin font-primary rounded-lg ${menu_class}`}
             onClick={Hamburger}
           >
-            <a href="/">Home</a>
-            <a href="/">Projects</a>
-            <a href="/">Mentors</a>
+            <ul className="flex flex-col space-y-6 items-center">
+              <li onClick={routeChange4}>Home</li>
+              <li>Projects</li>
+              <li>Mentors</li>
+            </ul>
 
             <button
               className="font-bold transition ease-in-out delay-150 bg-transparent text-skin rounded-xl px-7 py-2 border-2"
