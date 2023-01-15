@@ -35,7 +35,7 @@ const Header = ({ type }) => {
             />
             <FontAwesomeIcon
               icon={faSearch}
-              className="headerIcon border-[3px] p-3 rounded-full border-veryDarkBlue bg-lightGray text-orange cursor-pointer"
+              className="headerIcon border-[3px] p-3 rounded-full border-veryDarkBlue bg-lightGray text-orange cursor-pointer animate-bounce"
               onClick={handleSearch}
             />
           </div>
