@@ -28,7 +28,7 @@ function Hero() {
           {/* <span class="font-cursive font-light">Mentor</span> */}
           <p className="text-lg text-center leading-8 md:leading-10 md:text-left md:text-lg font-secondary">
             V guide is a Virtual platform for mentors and mentees to
-            collobrate,discuss and stay concentrated on their learning and
+            collaborate, discuss and stay concentrated on their learning and
             growth.
           </p>
           <div className="buttons flex flex-col items-center space-y-2 md:flex-row md:space-x-6">
