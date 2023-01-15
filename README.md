@@ -18,16 +18,17 @@ At present, only the front-end of the website has been developed, which consists
 
 ## <p id="features_for_future">Features to implement in future:</p>
 - Search Bar where user can search for mentors according to their domain.
+- User Authentication using JWT, Token Access.
 - Dashboard for the Mentors.
 - Backend using Mongodb.
 - Appointment Booking Feature where Student can schedule their appointment.
+- Knowledgeable content or other study material will also be provided to the students in the absence of mentors.
 
 ## <p id="tech">Tech Stack Used:</p>
 - HTML
 - Vanilla CSS
 - TailwindCss
 - JavaScript
-- Jquery
 - ReactJs
 
 ## <p id="prerequisites">Prerequisite to run the project in your desktop</p>
