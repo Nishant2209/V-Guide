@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "img": {
+            "source": "https://cdn.fansshare.com/image/chrisevans/chris-evans-sharpened-square-wx-mxaneg-chris-evans-1926005607.jpg",
+            "alt": "Chris"
+        },
+        "name": "Chris",
+        "branch": "BTech IT",
+        "domain": "Web Development",
+        "email": "thomas2905@gmail.com",
+        "type": "./images/alpha-icon.png",
+        "showAvailaibility": false,
+        "availaibility": {
+            "Slot_1": "Monday: 5pm",
+            "Slot_2": "Tuesday: 12pm",
+            "Slot_3": "Wednesday: 2pm"
+        }
+    },
+    {
+        "id": 2,
+        "img": {
+            "source": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHw%3D&w=1000&q=80",
+            "alt": "Lewis"
+        },
+        "name": "Lewis",
+        "branch": "BTech IT",
+        "domain": "App Development",
+        "email": "lewis2209@gmail.com",
+        "type": "./images/gamma-icon.png",
+        "showAvailaibility": false,
+        "availaibility": {
+            "Slot_1": "Monday: 10pm",
+            "Slot_2": "Tuesday: 8pm",
+            "Slot_3": "Thursday: 11am"
+        }
+    },
+    {
+        "id": 3,
+        "img": {
+            "source": "https://launchpad.syr.edu/wp-content/uploads/2021/11/Natasha-Brao-cropped-square.jpg",
+            "alt": "Natasha"
+        },
+        "name": "Natasha",
+        "branch": "BTech IT",
+        "domain": "Web Development",
+        "email": "king123@rediffmail.com",
+        "type": "./images/beta-icon.png",
+        "showAvailaibility": false,
+        "availaibility": {
+            "Slot_1": "Tuesday: 1pm",
+            "Slot_2": "Friday: 1pm",
+            "Slot_3": "Saturday: 2pm"
+        }
+    },
+    {
+        "id": 4,
+        "img": {
+            "source": "https://www.byrdie.com/thmb/kCqE3NHA0vO2CnD4hCF7traxQX8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-8878126241-81ea4aa0cb934fcb95c0fe220633a2e0.jpg",
+            "alt": "Ruth"
+        },
+        "name": "Ruth J. Dyer",
+        "branch": "BTech CSE",
+        "domain": "App Development",
+        "email": "ruth6969@gmail.com",
+        "type": "./images/alpha-icon.png",
+        "showAvailaibility": false,
+        "availaibility": {
+            "Slot_1": "Monday: 10pm",
+            "Slot_2": "Tuesday: 5pm",
+            "Slot_3": "Wednesday: 9pm"
+        }
+    },
+    {
+        "id": 5,
+        "img": {
+            "source": "https://stylesatlife.com/wp-content/uploads/2019/09/Edgy-Side-Look-for-Men.jpg.webp",
+            "alt": "Davis"
+        },
+        "name": "Davis",
+        "branch": "BTech IT",
+        "domain": "Blockchain",
+        "email": "davisscott23@gmail.com",
+        "type": "./images/alpha-icon.png",
+        "showAvailaibility": false,
+        "availaibility": {
+            "Slot_1": "Tuesday: 6pm",
+            "Slot_2": "Wednesday: 9pm",
+            "Slot_3": "Sunday: 11am"
+        }
+    },
+    {
+        "id": 6,
+        "img": {
+            "source": "https://publish.purewow.net/wp-content/uploads/sites/2/2020/11/haircuts-for-square-faces-natalie-portman.jpg?fit=728%2C921",
+            "alt": "Helen"
+        },
+        "name": "Helen",
+        "branch": "BTech IT",
+        "domain": "Web Development",
+        "email": "helen001@gmail.com",
+        "type": "./images/gamma-icon.png",
+        "showAvailaibility": false,
+        "availaibility": {
+            "Slot_1": "Wednesday: 8pm",
+            "Slot_2": "Thursday: 10pm",
+            "Slot_3": "Friday: 12pm"
+        }
+    },
+    {
+        "id": 7,
+        "img": {
+            "source": "http://cdn.shopify.com/s/files/1/0271/3101/9402/products/0_BEYONDSTAR-2019-Iron-Man-Tony-Stark-Square-Sunglasses-For-Men-Style-Leopard-Transparent-Lens-Sunglass-Women.jpg?v=1583504897",
+            "alt": "Tony"
+        },
+        "name": "Tony Stark",
+        "branch": "BTech IT",
+        "domain": "IOS Development",
+        "email": "tony@gmail.com",
+        "type": "./images/beta-icon.png",
+        "showAvailaibility": false,
+        "availaibility": {
+            "Slot_1": "Friday: 6pm",
+            "Slot_2": "Saturday: 7pm",
+            "Slot_3": "Sunday: 8pm"
+        }
+    }
+]
