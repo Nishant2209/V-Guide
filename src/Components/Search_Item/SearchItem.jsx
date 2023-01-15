@@ -58,10 +58,10 @@ const SearchItem = () => {
         </div>
         <div className="siDetails flex flex-col justify-between md:self-start">
           <div
-            className={`siDetailTexts text-right flex flex-col gap-1 transition-all ease-in-out 3000ms`}
+            className={`siDetailTexts flex flex-col gap-1`}
             onClick={() => handleAvailabilityClick(element)}
           >
-            <button className="siCheckButton absolute border-2 py-1 px-4 border-veryDarkBlue rounded-lg font-bold backdrop-blur-xl bg-transparent shadow text-veryDarkBlue ">
+            <button className="siCheckButton absolute border-2 py-1 px-4 border-veryDarkBlue rounded-lg font-bold backdrop-blur-xl bg-transparent shadow text-veryDarkBlue text-xs md:text-lg">
               See availability
             </button>
           </div>
