@@ -20,9 +20,9 @@ function TOM() {
         >
           <img src="./images/alpha-icon.png" alt="" className="h-24" />
           <p className="text-md lg:text-lg md:w-3/5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-            labore, modi, numquam tempora ducimus necessitatibus molestiae
-            assumenda dicta mollitia voluptatibus ipsam aliquam, et laborum.
+            Mentors at Alpha are highly experienced professionals who will
+            provide guidance and support for a wide variety of projects
+            including start-up ideas, complex websites, and much more.
           </p>
         </div>
         <div
@@ -31,10 +31,10 @@ function TOM() {
         >
           <img src="./images/beta-icon.png" alt="" className="h-28" />
           <p className="text-md lg:text-lg md:w-3/5">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus doloribus, architecto numquam nobis eveniet
-            reprehenderit cum dicta nostrum neque? Quas ipsam dignissimos magnam
-            repellat.
+            Beta mentors have a medium level of expertise in their fields and
+            can assist you with problems related to your job, work, or skills.
+            During the course of your medium-level project, they will be able to
+            answer your questions.
           </p>
         </div>
         <div
@@ -43,9 +43,10 @@ function TOM() {
         >
           <img src="./images/gamma-icon.png" alt="" className="h-28" />
           <p className="text-md lg:text-lg md:w-3/5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            iste, dolor vel ad, error quaerat reiciendis iusto ex repudiandae
-            quia explicabo a aspernatur consequuntur?
+            Gamma mentors are your own colleagues and university classmates who
+            have acquired a decent understanding of their domain in the past few
+            years. You will receive guidance for your low-level projects as well
+            as a basic roadmap for your projects from them.
           </p>
         </div>
       </div>
