@@ -1,17 +1,20 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar_Dash/Navbar";
+import React, { useContext } from "react";
+import destinationContext from "../../Context/destinationContext";
 
-const Header = ({ type }) => {
-  const [destination, setDestination] = useState("");
+
+const Header = () => {
+
+  const a = useContext(destinationContext);
 
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    navigate("/Mentors", { state: { destination } });
+    navigate("/Mentors");
   };
 
   return (
@@ -31,7 +34,7 @@ const Header = ({ type }) => {
               type="text"
               placeholder="What's your domain?"
               className="headerSearchInput"
-              onChange={(e) => setDestination(e.target.value)}
+              onChange={(e) => a.setDestination(e.target.value)}
             />
             <FontAwesomeIcon
               icon={faSearch}
