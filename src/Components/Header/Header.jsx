@@ -3,13 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar_Dash/Navbar";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import destinationContext from "../../Context/destinationContext";
 
-
 const Header = () => {
-
   const a = useContext(destinationContext);
+
+  const [value, setValue] = useState();
+  const [input, setInput] = useState();
+  const passValue = () => {
+    console.log(value);
+    a.setDestination({
+      key: "domain",
+      s1: `${value.toLowerCase()}`,
+    });
+  };
 
   const navigate = useNavigate();
 
@@ -34,12 +42,39 @@ const Header = () => {
               type="text"
               placeholder="What's your domain?"
               className="headerSearchInput"
-              onChange={(e) => a.setDestination(e.target.value)}
+              onChange={(e) => {
+                setValue(e.target.value);
+                setInput(e.target.value);
+              }}
+              // For Enter key
+              onKeyDown={(e) => {
+                console.log(e.key);
+                if (e.key === "Enter") {
+                  if (!input) {
+                    alert("Please Enter Some Data");
+                  } else {
+                    handleSearch();
+                    passValue();
+                  }
+                }
+              }}
+              // onClick={(e) => a.setDestination({
+              //   "key": "domain",
+              //   "s1":`${e.target.value}`
+              // })}
             />
+
             <FontAwesomeIcon
               icon={faSearch}
               className="headerIcon border-[3px] p-3 rounded-full border-veryDarkBlue bg-lightGray text-orange cursor-pointer animate-bounce"
-              onClick={handleSearch}
+              onClick={() => {
+                if (!input) {
+                  alert("Please Enter Some Data");
+                } else {
+                  handleSearch();
+                  passValue();
+                }
+              }}
             />
           </div>
         </div>
