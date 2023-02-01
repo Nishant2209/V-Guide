@@ -48,7 +48,6 @@ const Header = () => {
               }}
               // For Enter key
               onKeyDown={(e) => {
-                console.log(e.key);
                 if (e.key === "Enter") {
                   if (!input) {
                     alert("Please Enter Some Data");
@@ -58,10 +57,6 @@ const Header = () => {
                   }
                 }
               }}
-              // onClick={(e) => a.setDestination({
-              //   "key": "domain",
-              //   "s1":`${e.target.value}`
-              // })}
             />
 
             <FontAwesomeIcon
