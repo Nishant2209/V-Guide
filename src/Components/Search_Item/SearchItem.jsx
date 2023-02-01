@@ -20,7 +20,7 @@ const SearchItem = () => {
     } else {
       setRender(true);
     }
-  });
+  },[filteredArray.length]);
 
   // const handel = ()=>{
   //   console.log("yes");
