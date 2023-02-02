@@ -12,7 +12,7 @@ const SearchItem = () => {
   let filteredArray = mentors.filter((element) =>
     element[`${key}`].toLowerCase().includes(contextData.destination.s1)
   );
-  //  let jsx = null;
+
   useEffect(() => {
     console.log("rendered");
     if (filteredArray.length <= 0) {
@@ -22,14 +22,8 @@ const SearchItem = () => {
     }
   },[filteredArray.length]);
 
-  // const handel = ()=>{
-  //   console.log("yes");
-  // }
-  // let jsx = <p>hello wordl</p>;
 
   const handleAvailabilityClick = (element, hide) => {
-    // setAvailaibility("hidden");
-    // setSlots("flex");
     setMentors(
       mentors.map((e) =>
         e.id === element.id
@@ -54,12 +48,6 @@ const SearchItem = () => {
   return (
     <>
       <div className={`filters ${render ? "block" : "hidden"}`}>
-        {/* <select name="cars" id="cars" form="carform">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
-        </select> */}
         <div className="flex my-6 justify-around">
           <button
             className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
@@ -72,7 +60,6 @@ const SearchItem = () => {
                 key: "level",
                 s1: "",
               });
-              // tell();
             }}
           >
             Show All
@@ -186,8 +173,9 @@ const SearchItem = () => {
         ))
       ) : (
         <div className="container flex justify-center">
-          <h1 className="mx-auto text-xl text-center leading-tight font-bold md:text-5xl md:text-left md:leading-tight font-primary">
-             Sorry, But this Field is not avilable 😔
+          <h1 className="mx-auto text-xl flex justify-center flex-col leading-tight font-bold md:text-5xl md:text-left md:leading-tight font-primary">
+            <img src="./images/error.png" alt="" />
+            <div className="text-orange">Oops!!! Mentor not found</div>
           </h1>
         </div>
       )}
