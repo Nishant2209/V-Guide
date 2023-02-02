@@ -1,17 +1,24 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar_Dash/Navbar";
+import React, { useContext, useState } from "react";
+import destinationContext from "../../Context/destinationContext";
 
-const Header = ({ type }) => {
-  const [destination, setDestination] = useState("");
+const Header = () => {
+  const a = useContext(destinationContext);
+
+  const [value, setValue] = useState();
 
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    navigate("/mentors", { state: { destination } });
+    navigate("/Mentors");
+    a.setDestination({
+      key: "domain",
+      s1: `${value.toLowerCase()}`,
+    });
   };
 
   return (
@@ -31,12 +38,31 @@ const Header = ({ type }) => {
               type="text"
               placeholder="What's your domain?"
               className="headerSearchInput"
-              onChange={(e) => setDestination(e.target.value)}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
+              // For Enter key
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  if (!value) {
+                    alert("Please Enter Some Data");
+                  } else {
+                    handleSearch();
+                  }
+                }
+              }}
             />
+
             <FontAwesomeIcon
               icon={faSearch}
-              className="headerIcon border-[3px] p-3 rounded-full border-veryDarkBlue bg-lightGray text-orange cursor-pointer"
-              onClick={handleSearch}
+              className="headerIcon border-[3px] p-3 rounded-full border-veryDarkBlue bg-lightGray text-orange cursor-pointer animate-bounce"
+              onClick={() => {
+                if (!value) {
+                  alert("Please Enter Some Data");
+                } else {
+                  handleSearch();
+                }
+              }}
             />
           </div>
         </div>

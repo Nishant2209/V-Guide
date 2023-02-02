@@ -1,14 +1,13 @@
+.Sticky{
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.25s ease-in-out;
+}
+@media(max-width: 976px) {
   .Sticky{
     padding: 1rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    transition: 0.25s ease-in-out;
   }
-
-  @media(max-width: 976px) {
-    .Sticky{
-      padding: 1rem;
-    }
-  }
+}

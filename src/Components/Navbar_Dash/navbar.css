@@ -75,3 +75,18 @@ background-color: #0C2D4A;
     top: -14px;
     right: 0px;
   }
+
+  .Sticky{
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.25s ease-in-out;
+  }
+  @media(max-width: 976px) {
+    .Sticky{
+      padding: 1rem 0.5rem 1rem 0.5rem;
+    }
+  }
+  

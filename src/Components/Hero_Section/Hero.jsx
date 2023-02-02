@@ -20,15 +20,15 @@ function Hero() {
       <Navbar />
       <div className="flex flex-col-reverse md:flex-row mx-auto pb-20 md:pb-0 items-center md:px-28 md:mt-10 text-veryDarkBlue">
         {/* Left */}
-        <div className="content flex flex-col space-y-10 md:w-1/2">
+        <div className="content flex flex-col space-y-14 md:w-1/2">
           <h1 className="text-4xl text-center leading-tight font-bold md:text-5xl md:text-left md:leading-tight font-primary">
             Find Your <span className="text-orange font-extrabold">Mentor</span>{" "}
             in one click.
           </h1>
           {/* <span class="font-cursive font-light">Mentor</span> */}
-          <p className="text-xl text-center font-semibold leading-8 md:leading-10 md:text-left md:text-lg font-secondary">
+          <p className="text-lg text-center leading-8 md:leading-10 md:text-left md:text-lg font-secondary">
             V guide is a Virtual platform for mentors and mentees to
-            collobrate,discuss and stay concentrated on their learning and
+            collaborate, discuss and stay concentrated on their learning and
             growth.
           </p>
           <div className="buttons flex flex-col items-center space-y-2 md:flex-row md:space-x-6">
@@ -39,7 +39,7 @@ function Hero() {
               Find Mentor
             </button>
             <button
-              className="text-lg transition ease delay-150 bg-veryDarkBlue text-white rounded-xl px-9 py-3 border-2 hover:bg-transparent font-semibold hover:text-veryDarkBlue hover:border-veryDarkBlue"
+              className="text-lg transition ease delay-150 bg-veryDarkBlue text-white rounded-xl px-9 py-3 border-2 hover:bg-transparent font-semibold hover:text-veryDarkBlue border-veryDarkBlue"
               onClick={routeChange1}
             >
               Become Mentor

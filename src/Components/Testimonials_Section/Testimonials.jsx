@@ -34,7 +34,7 @@ function Testimonials() {
                         alt="quote-left"
                       />
                     </div>
-                    <p className="text-center text-xs md:text-sm font-bold px-7">
+                    <p className="text-center text-base md:text-sm px-7">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Ut illum libero cupiditate modi vero, est ea facere
                       aliquam ab rem.
@@ -79,7 +79,7 @@ function Testimonials() {
                         alt="quote-left"
                       />
                     </div>
-                    <p className="text-center text-xs md:text-sm font-bold px-7">
+                    <p className="text-center text-base md:text-sm px-7">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Ut illum libero cupiditate modi vero, est ea facere
                       aliquam ab rem.
@@ -124,7 +124,7 @@ function Testimonials() {
                         alt="quote-left"
                       />
                     </div>
-                    <p className="text-center text-xs md:text-sm font-bold px-7">
+                    <p className="text-center text-base md:text-sm px-7">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Ut illum libero cupiditate modi vero, est ea facere
                       aliquam ab rem.
