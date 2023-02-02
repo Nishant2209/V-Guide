@@ -1,5 +1,5 @@
 import "./searchItem.css";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import mentorsData from "../../mentors.json";
 import destinationContext from "../../Context/destinationContext";
 
@@ -7,21 +7,10 @@ const SearchItem = () => {
   const [mentors, setMentors] = useState(mentorsData);
   const contextData = useContext(destinationContext);
   let key = contextData.destination.key;
-  let [render, setRender] = useState(true);
 
   let filteredArray = mentors.filter((element) =>
     element[`${key}`].toLowerCase().includes(contextData.destination.s1)
   );
-
-  useEffect(() => {
-    console.log("rendered");
-    if (filteredArray.length <= 0) {
-      setRender(false);
-    } else {
-      setRender(true);
-    }
-  },[filteredArray.length]);
-
 
   const handleAvailabilityClick = (element, hide) => {
     setMentors(
@@ -47,7 +36,7 @@ const SearchItem = () => {
   //
   return (
     <>
-      <div className={`filters ${render ? "block" : "hidden"}`}>
+      <div className={`filters ${filteredArray.length ? "block" : "hidden"}`}>
         <div className="flex my-6 justify-around">
           <button
             className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
@@ -111,7 +100,7 @@ const SearchItem = () => {
           </button>
         </div>
       </div>
-      {render ? (
+      {filteredArray.length ? (
         filteredArray.map((element) => (
           <div
             className="searchItem p-5 rounded-md flex flex-col m-10 md:mb-5 md:mx-0 md:my-0 md:flex-row items-center justify-between border-2 border-veryDarkBlue gap-5 bg-gradient-to-r from-[#b4b7cd] via-white to-[#f0d0cb]"
