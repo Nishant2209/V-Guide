@@ -10,19 +10,15 @@ const Header = () => {
   const a = useContext(destinationContext);
 
   const [value, setValue] = useState();
-  const [input, setInput] = useState();
-  const passValue = () => {
-    console.log(value);
-    a.setDestination({
-      key: "domain",
-      s1: `${value.toLowerCase()}`,
-    });
-  };
 
   const navigate = useNavigate();
 
   const handleSearch = () => {
     navigate("/Mentors");
+    a.setDestination({
+      key: "domain",
+      s1: `${value.toLowerCase()}`,
+    });
   };
 
   return (
@@ -44,16 +40,14 @@ const Header = () => {
               className="headerSearchInput"
               onChange={(e) => {
                 setValue(e.target.value);
-                setInput(e.target.value);
               }}
               // For Enter key
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  if (!input) {
+                  if (!value) {
                     alert("Please Enter Some Data");
                   } else {
                     handleSearch();
-                    passValue();
                   }
                 }
               }}
@@ -63,11 +57,10 @@ const Header = () => {
               icon={faSearch}
               className="headerIcon border-[3px] p-3 rounded-full border-veryDarkBlue bg-lightGray text-orange cursor-pointer animate-bounce"
               onClick={() => {
-                if (!input) {
+                if (!value) {
                   alert("Please Enter Some Data");
                 } else {
                   handleSearch();
-                  passValue();
                 }
               }}
             />
