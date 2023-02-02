@@ -53,6 +53,10 @@ const Navbar = () => {
     navigate("/Dashboard");
   };
 
+  const routeChange5 = () => {
+    navigate("/Mentors");
+  };
+
   return (
     <>
       <div
@@ -91,7 +95,10 @@ const Navbar = () => {
               <li className="mr-10 font-semibold hover-underline-animation">
                 Projects
               </li>
-              <li className="font-semibold hover-underline-animation">
+              <li
+                className="font-semibold hover-underline-animation"
+                onClick={routeChange5}
+              >
                 Mentors
               </li>
             </ul>
@@ -122,7 +129,7 @@ const Navbar = () => {
             <ul className="flex flex-col space-y-6 items-center">
               <li onClick={routeChange4}>Home</li>
               <li>Projects</li>
-              <li>Mentors</li>
+              <li onClick={routeChange5}>Mentors</li>
             </ul>
 
             <button
