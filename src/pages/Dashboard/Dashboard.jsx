@@ -1,6 +1,6 @@
 import Featured from "../../Components/Featured/Featured";
 import Header from "../../Components/Header/Header";
-import FooterDash from "../../Components/Footer_Dash/Footer_Dash";
+import Footer from "../../Components/Footer/Footer";
 import TOM from "../../Components/TypesOfMentor/TOM";
 
 import "./Dashboard.css";
@@ -11,7 +11,7 @@ const Dashboard = () => {
       <Header />
       <Featured />
       <TOM />
-      <FooterDash />
+      <Footer />
     </div>
   );
 };

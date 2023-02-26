@@ -1,6 +1,6 @@
 import React from "react";
 
-function Footer_Dash() {
+function Footer() {
   return (
     <footer>
       <div
@@ -35,4 +35,4 @@ function Footer_Dash() {
   );
 }
 
-export default Footer_Dash;
+export default Footer;

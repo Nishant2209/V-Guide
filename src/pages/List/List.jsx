@@ -1,7 +1,7 @@
 import "./list.css";
 import Header from "../../Components/Header/Header";
 import SearchItem from "../../Components/Search_Item/SearchItem";
-import FooterDash from "../../Components/Footer_Dash/Footer_Dash";
+import Footer from "../../Components/Footer/Footer";
 
 const List = () => {
   return (
@@ -14,7 +14,7 @@ const List = () => {
           </div>
         </div>
       </div>
-      <FooterDash />
+      <Footer />
     </div>
   );
 };
