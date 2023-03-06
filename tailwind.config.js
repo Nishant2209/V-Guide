@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
       sm: "480px",
@@ -30,8 +28,8 @@ module.exports = {
         primary: ["Montserrat", "sans-serif"],
         secondary: ["Montserrat Alternates", "sans-serif"],
         cursive: ["Indie Flower", "cursive"],
-      }
+      },
     },
   },
   plugins: [],
-}
+};
