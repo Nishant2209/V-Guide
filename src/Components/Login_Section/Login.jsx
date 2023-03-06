@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   let navigate = useNavigate();
+  const host = "http://localhost:5000";
+  const [auth, setAuth] = useState({
+    email: "",
+    password: "",
+  });
   const routeChange1 = () => {
     navigate("/");
   };
   const routeChange2 = () => {
     navigate("/SignUpPage");
+  };
+  const onChange = (e) => {
+    setAuth({ ...auth, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`${host}/api/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: auth.email, password: auth.password }),
+    });
+    const json = await response.json();
+    if (json.success) {
+      localStorage.setItem("token", json.authToken);
+      navigate("/Dashboard");
+      alert("Login Successful");
+    } else {
+      alert("Invalid Credentials");
+    }
   };
   return (
     <div
@@ -28,21 +54,44 @@ const Login = () => {
           />
         </div>
         <div>
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <input
               type="email"
               placeholder="E-mail"
               className="block mt-8 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
+              id="email"
+              name="email"
+              value={auth.email}
+              onChange={onChange}
+              // For Enter key
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSubmit();
+                }
+              }}
             />
             <input
               type="password"
               placeholder="Password"
               className="block mt-8 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
+              id="password"
+              name="password"
+              value={auth.password}
+              onChange={onChange}
+              // For Enter key
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSubmit();
+                }
+              }}
             />
             <div className="mt-5 flex justify-center">
-              <button className="hover-underline-animation" onClick={routeChange2}>
+              <button
+                className="hover-underline-animation"
+                onClick={routeChange2}
+              >
                 <center>New User? Register Here</center>
               </button>
             </div>
