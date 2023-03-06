@@ -1,16 +1,22 @@
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { FaUserCircle } from "react-icons/fa";
+import destinationContext from "../../Context/destinationContext";
 
 const Navbar = () => {
+  const context = useContext(destinationContext);
+  const { user, fetchUser } = context;
   const [burger_class, setBurgerClass] = useState("!open");
   const [menu_class, setMenuClass] = useState("hidden");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   const [stickyClass, setStickyClass] = useState("");
 
   useEffect(() => {
+    fetchUser();
     window.addEventListener("scroll", stickNavbar);
     return () => window.removeEventListener("scroll", stickNavbar);
+    // eslint-disable-next-line
   }, []);
 
   const stickNavbar = () => {
@@ -56,6 +62,18 @@ const Navbar = () => {
   const routeChange5 = () => {
     navigate("/Mentors");
   };
+  const routeChange6 = () => {
+    navigate("/Profile");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/Dashboard");
+  };
+
+  const handleClick = () => {
+    alert("Please Login First")
+  }
 
   return (
     <>
@@ -92,32 +110,78 @@ const Navbar = () => {
               >
                 Home
               </li>
-              <li className="mr-10 font-semibold hover-underline-animation">
-                Projects
-              </li>
               <li
-                className="font-semibold hover-underline-animation"
+                className="mr-10 font-semibold hover-underline-animation"
                 onClick={routeChange5}
               >
                 Mentors
               </li>
+              <li
+                className="font-semibold hover-underline-animation"
+                onClick={
+                  localStorage.getItem("token")
+                    ? routeChange6 : handleClick
+                }
+              >
+                Profile
+              </li>
             </ul>
           </div>
-
-          <div className="navItems hidden lg:block">
-            <button
-              className="navButton border-[1.2px] py-1 px-4 ml-3 border-veryDarkBlue rounded-lg font-bold"
-              onClick={routeChange1}
-            >
-              Login
-            </button>
-            <button
-              className="navButton border-[1.2px] py-1 px-4 ml-3 border-veryDarkBlue rounded-lg font-bold"
-              onClick={routeChange2}
-            >
-              Sign Up
-            </button>
-          </div>
+          {!localStorage.getItem("token") ? (
+            <div className="hidden lg:block">
+              <button
+                className="navButton border-[1.2px] py-1 px-4 ml-3 border-veryDarkBlue rounded-lg font-bold"
+                onClick={routeChange1}
+              >
+                Login
+              </button>
+              <button
+                className="navButton border-[1.2px] py-1 px-4 ml-3 border-veryDarkBlue rounded-lg font-bold"
+                onClick={routeChange2}
+              >
+                Sign Up
+              </button>
+            </div>
+          ) : (
+            <div className="flex flex-row">
+              <div className="userDetails flex flex-col items-center overflow-hidden float-left">
+                <FaUserCircle className="cursor-pointer w-8 h-8 lg:mr-2" />
+                <div className="navItems hidden absolute mt-16 p-5 backdrop-blur-lg bg-veryDarkBlue text-skin rounded-lg text-center font-secondary text-xs lg:text-base">
+                  <p className="text-2xl lg:text-3xl font-extrabold text-orange font-primary mb-2">
+                    {user.name}
+                  </p>
+                  <p className="text-lg lg:text-xl font-medium  border border-orange inline px-3 py-[1px] rounded-lg font-[Pacifico]">
+                    {user.type}
+                  </p>
+                  <div className="flex flex-row gap-x-4 justify-between mt-3">
+                    <div>
+                      <p className="text-left mb-3">{user.gender}</p>
+                      <p className="text-left mb-3">{user.domain}</p>
+                      {user.type === "Mentor" ? (
+                        <div>
+                          <p className="text-left font-[Pacifico] text-lg lg:text-xl text-orange mb-3">
+                            {user.level}
+                          </p>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                    <div>
+                      <p className="text-right mb-3">{user.email}</p>
+                      <p className="text-right mb-3">{user.phone}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                className="navButton border-[1.2px] py-1 px-4 ml-3 border-veryDarkBlue rounded-lg font-bold"
+                onClick={handleLogout}
+              >
+                LogOut
+              </button>
+            </div>
+          )}
         </div>
         {/* Mobile Menu */}
         <div className="lg:hidden">
