@@ -89,4 +89,12 @@ background-color: #0C2D4A;
       padding: 1rem 0.5rem 1rem 0.5rem;
     }
   }
+
+  .userDetails:hover .navItems{
+    display: block;
+  }
+
+  .navItems {
+    min-width: 160px;
+  }
   
