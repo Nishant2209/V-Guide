@@ -5,6 +5,7 @@ import SignUpPage from "./pages/Sign Up Page/SignUpPage";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import List from "./pages/List/List";
 import Destination from "./Context/destination";
+import ProfilePage from "./pages/Profile/ProfilePage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/SignUpPage" element={<SignUpPage />} />
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Mentors" element={<List />} />
+          <Route path="/Profile" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
     </Destination>
