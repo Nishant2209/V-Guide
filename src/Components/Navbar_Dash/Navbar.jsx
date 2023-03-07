@@ -72,8 +72,8 @@ const Navbar = () => {
   };
 
   const handleClick = () => {
-    alert("Please Login First")
-  }
+    alert("Please Login First");
+  };
 
   return (
     <>
@@ -81,7 +81,7 @@ const Navbar = () => {
         className={`navbar flex justify-center mx-auto p-5 lg:px-10 z-50 px-2 md:px-0 ${stickyClass}`}
       >
         {/* flex  conatiner*/}
-        <div className=" flex justify-between w-11/12 py-3 px-8 lg:px-20 items-center rounded-xl z-50 backdrop-blur-xl shadow">
+        <div className=" flex justify-between w-11/12 py-3 px-4 lg:px-20 items-center rounded-xl z-50 backdrop-blur-xl shadow">
           {/* Hamburger Menu */}
           <div className="lg:hidden">
             <button
@@ -119,8 +119,7 @@ const Navbar = () => {
               <li
                 className="font-semibold hover-underline-animation"
                 onClick={
-                  localStorage.getItem("token")
-                    ? routeChange6 : handleClick
+                  localStorage.getItem("token") ? routeChange6 : handleClick
                 }
               >
                 Profile
@@ -143,10 +142,10 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <div className="userDetails flex flex-col items-center overflow-hidden float-left">
-                <FaUserCircle className="cursor-pointer w-8 h-8 lg:mr-2" />
-                <div className="navItems hidden absolute mt-16 p-5 backdrop-blur-lg bg-veryDarkBlue text-skin rounded-lg text-center font-secondary text-xs lg:text-base">
+                <FaUserCircle className="cursor-pointer w-6 h-6 lg:w-8 lg:h-8 lg:mr-2" />
+                <div className="navItems hidden absolute mt-16 p-5 backdrop-blur-lg bg-veryDarkBlue text-skin rounded-lg text-center font-secondary text-xs lg:text-base right-2">
                   <p className="text-2xl lg:text-3xl font-extrabold text-orange font-primary mb-2">
                     {user.name}
                   </p>
@@ -175,7 +174,7 @@ const Navbar = () => {
                 </div>
               </div>
               <button
-                className="navButton border-[1.2px] py-1 px-4 ml-3 border-veryDarkBlue rounded-lg font-bold"
+                className="navButton border-[1.2px] py-1 px-3 lg:py-1 lg:px-4 ml-3 border-veryDarkBlue rounded-lg font-extrabold text-sm lg:text-base"
                 onClick={handleLogout}
               >
                 LogOut
@@ -187,27 +186,32 @@ const Navbar = () => {
         <div className="lg:hidden">
           <div
             id="menu"
-            className={`absolute flex-col items-center py-8 mt-20 md:mt-28 space-y-6 font-bold bg-veryDarkBlue left-6 right-6 drop-shadow-md text-skin font-primary rounded-lg ${menu_class}`}
+            className={`z-50 absolute flex-col items-center py-8 mt-20 md:mt-28 space-y-6 font-bold bg-veryDarkBlue left-6 right-6 drop-shadow-md text-skin font-primary rounded-lg ${menu_class}`}
             onClick={Hamburger}
           >
             <ul className="flex flex-col space-y-6 items-center">
               <li onClick={routeChange4}>Home</li>
-              <li>Projects</li>
               <li onClick={routeChange5}>Mentors</li>
+              <li onClick={routeChange6}>Profile</li>
             </ul>
-
-            <button
-              className="font-bold transition ease-in-out delay-150 bg-transparent text-skin rounded-xl px-7 py-2 border-2"
-              onClick={routeChange1}
-            >
-              Login
-            </button>
-            <button
-              className="font-bold transition ease-in-out delay-150 bg-transparent text-skin rounded-xl px-7 py-2 border-2"
-              onClick={routeChange2}
-            >
-              Sign Up
-            </button>
+            {!localStorage.getItem("token") ? (
+              <div className="flex flex-col space-y-6">
+                <button
+                  className="font-bold transition ease-in-out delay-150 bg-transparent text-skin rounded-xl px-7 py-2 border-2"
+                  onClick={routeChange1}
+                >
+                  Login
+                </button>
+                <button
+                  className="font-bold transition ease-in-out delay-150 bg-transparent text-skin rounded-xl px-7 py-2 border-2"
+                  onClick={routeChange2}
+                >
+                  Sign Up
+                </button>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
