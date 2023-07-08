@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   let navigate = useNavigate();
-  const host = "http://localhost:5000";
+  const host = "http://localhost:4000";
   const [auth, setAuth] = useState({
     email: "",
     password: "",

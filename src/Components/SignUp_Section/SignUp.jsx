@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   let navigate = useNavigate();
-  let host = "http://localhost:5000";
+  let host = "http://localhost:4000";
   const [user, setUser] = useState({
     name: "",
     email: "",
