@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import destinationContext from "../../Context/destinationContext";
+import Spinner from "../Spinner/Spinner";
 
 const Navbar = () => {
   const context = useContext(destinationContext);
-  const { user, fetchUser } = context;
+  const { user, fetchUser, loading } = context;
   const [burger_class, setBurgerClass] = useState("!open");
   const [menu_class, setMenuClass] = useState("hidden");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -110,12 +111,17 @@ const Navbar = () => {
               >
                 Home
               </li>
-              <li
-                className="mr-10 font-semibold hover-underline-animation"
-                onClick={routeChange5}
-              >
-                Mentors
-              </li>
+              {user.type === "Student" ? (
+                <li
+                  className="mr-10 font-semibold hover-underline-animation"
+                  onClick={
+                    localStorage.getItem("token") ? routeChange5 : handleClick
+                  }
+                >
+                  Mentors
+                </li>
+              ) : null}
+
               <li
                 className="font-semibold hover-underline-animation"
                 onClick={
@@ -146,31 +152,38 @@ const Navbar = () => {
               <div className="userDetails flex flex-col items-center overflow-hidden float-left">
                 <FaUserCircle className="cursor-pointer w-6 h-6 lg:w-8 lg:h-8 lg:mr-2" />
                 <div className="navItems hidden absolute mt-16 p-5 backdrop-blur-lg bg-veryDarkBlue text-skin rounded-lg text-center font-secondary text-xs lg:text-base right-2">
-                  <p className="text-2xl lg:text-3xl font-extrabold text-orange font-primary mb-2">
-                    {user.name}
-                  </p>
-                  <p className="text-lg lg:text-xl font-medium  border border-orange inline px-3 py-[1px] rounded-lg font-[Pacifico]">
-                    {user.type}
-                  </p>
-                  <div className="flex flex-row gap-x-4 justify-between mt-3">
+                  {/* <Spinner /> */}
+                  {!loading ? (
                     <div>
-                      <p className="text-left mb-3">{user.gender}</p>
-                      <p className="text-left mb-3">{user.domain}</p>
-                      {user.type === "Mentor" ? (
+                      <p className="text-2xl lg:text-3xl font-extrabold text-orange font-primary mb-2">
+                        {user.name}
+                      </p>
+                      <p className="text-lg lg:text-xl font-medium  border border-orange inline px-3 py-[1px] rounded-lg font-[Pacifico]">
+                        {user.type}
+                      </p>
+                      <div className="flex flex-row gap-x-4 justify-between mt-3">
                         <div>
-                          <p className="text-left font-[Pacifico] text-lg lg:text-xl text-orange mb-3">
-                            {user.level}
-                          </p>
+                          <p className="text-left mb-3">{user.gender}</p>
+                          <p className="text-left mb-3">{user.domain}</p>
+                          {user.type === "Mentor" ? (
+                            <div>
+                              <p className="text-left font-[Pacifico] text-lg lg:text-xl text-orange mb-3">
+                                {user.level}
+                              </p>
+                            </div>
+                          ) : (
+                            ""
+                          )}
                         </div>
-                      ) : (
-                        ""
-                      )}
+                        <div>
+                          <p className="text-right mb-3">{user.email}</p>
+                          <p className="text-right mb-3">{user.phone}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-right mb-3">{user.email}</p>
-                      <p className="text-right mb-3">{user.phone}</p>
-                    </div>
-                  </div>
+                  ) : (
+                    <Spinner />
+                  )}
                 </div>
               </div>
               <button
@@ -191,8 +204,20 @@ const Navbar = () => {
           >
             <ul className="flex flex-col space-y-6 items-center">
               <li onClick={routeChange4}>Home</li>
-              <li onClick={routeChange5}>Mentors</li>
-              <li onClick={routeChange6}>Profile</li>
+              <li
+                onClick={
+                  localStorage.getItem("token") ? routeChange5 : handleClick
+                }
+              >
+                Mentors
+              </li>
+              <li
+                onClick={
+                  localStorage.getItem("token") ? routeChange6 : handleClick
+                }
+              >
+                Profile
+              </li>
             </ul>
             {!localStorage.getItem("token") ? (
               <div className="flex flex-col space-y-6">
