@@ -1,51 +1,81 @@
 import "./searchItem.css";
-import { useState, useContext } from "react";
-import mentorsData from "../../mentors.json";
+import { useState, useContext, useEffect } from "react";
 import destinationContext from "../../Context/destinationContext";
 
 const SearchItem = () => {
-  const [mentors, setMentors] = useState(mentorsData);
+  const [mentors, setMentors] = useState([]);
   const contextData = useContext(destinationContext);
-  let key = contextData.destination.key;
+  const { destination, setDestination, userAvailability, user } = contextData;
+  let key = destination.key;
+  const host = "http://localhost:4000";
 
-  let filteredArray = mentors.filter((element) =>
-    element[`${key}`].toLowerCase().includes(contextData.destination.s1)
+  useEffect(() => {
+    fetchAllUsers();
+  }, []);
+
+  const fetchAllUsers = async () => {
+    const response = await fetch(`${host}/api/auth/allusers`, {
+      method: "GET",
+    });
+
+    const json = await response.json();
+    setMentors(json);
+  };
+
+  const setAvailability = (avail) => {
+    userAvailability(user.id, avail);
+  };
+
+  let Array = mentors.filter((e) => {
+    if (e.type === "Student") {
+      return false;
+    }
+    return true;
+  });
+
+  let filteredArray = Array.filter((element) =>
+    element[`${key}`]
+      ?.toLowerCase()
+      .includes(destination.s1.trim().split(/ +/).join(" "))
   );
 
   const handleAvailabilityClick = (element, hide) => {
-    setMentors(
-      mentors.map((e) =>
-        e.id === element.id
-          ? {
-              id: e.id,
-              img: e.img,
-              name: e.name,
-              branch: e.branch,
-              domain: e.domain,
-              email: e.email,
-              level: e.level,
-              type: e.type,
-              showAvailaibility: hide ? false : true,
-              availaibility: e.availaibility,
-            }
-          : e
-      )
-    );
+    if (!localStorage.getItem("token")) {
+      alert("Login to see availability");
+    } else {
+      setMentors(
+        Array.map((e) =>
+          e._id === element._id
+            ? {
+                _id: e._id,
+                // img: e.img,
+                name: e.name,
+                email: e.email,
+                phone: e.phone,
+                gender: e.gender,
+                type: e.type,
+                domain: e.domain,
+                level: e.level,
+                showAvailaibility: hide ? false : true,
+                availability: e.availability,
+              }
+            : e
+        )
+      );
+    }
   };
-
-  //
   return (
     <>
-      <div className={`filters ${filteredArray.length ? "block" : "hidden"}`}>
+      <div className="filters">
         <div className="flex my-6 justify-around">
           <button
             className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
        hover:text-veryDarkBlue transition ease-in-out hover:-translate-y-1 hover:border-[0.5px]
         hover:border-veryDarkBlue  ${
-          contextData.destination.s1 === "" ? "active" : "border-0"
+          destination.s1 === "" ? "active" : "border-0"
         }`}
             onClick={() => {
-              contextData.setDestination({
+              setDestination({
                 key: "level",
                 s1: "",
               });
@@ -57,10 +87,10 @@ const SearchItem = () => {
             className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
        hover:text-veryDarkBlue transition ease-in-out hover:-translate-y-1 hover:border-[0.5px]
         hover:border-veryDarkBlue  ${
-          contextData.destination.s1 === "alpha" ? "active" : "border-0"
+          destination.s1 === "alpha" ? "active" : "border-0"
         }`}
             onClick={() => {
-              contextData.setDestination({
+              setDestination({
                 key: "level",
                 s1: "alpha",
               });
@@ -72,10 +102,10 @@ const SearchItem = () => {
             className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
        hover:text-veryDarkBlue transition ease-in-out hover:-translate-y-1 hover:border-[0.5px]
         hover:border-veryDarkBlue  ${
-          contextData.destination.s1 === "beta" ? "active" : "border-0"
+          destination.s1 === "beta" ? "active" : "border-0"
         }`}
             onClick={() => {
-              contextData.setDestination({
+              setDestination({
                 key: "level",
                 s1: "beta",
               });
@@ -87,10 +117,10 @@ const SearchItem = () => {
             className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
        hover:text-veryDarkBlue transition ease-in-out hover:-translate-y-1 hover:border-[0.5px]
         hover:border-veryDarkBlue  ${
-          contextData.destination.s1 === "gamma" ? "active" : "border-0"
+          destination.s1 === "gamma" ? "active" : "border-0"
         }`}
             onClick={() => {
-              contextData.setDestination({
+              setDestination({
                 key: "level",
                 s1: "gamma",
               });
@@ -105,10 +135,11 @@ const SearchItem = () => {
           <div
             className="searchItem p-5 rounded-md flex flex-col m-10 md:mb-5 md:mx-0 md:my-0 md:flex-row items-center justify-between border-2 border-veryDarkBlue gap-5 bg-gradient-to-r from-[#b4b7cd] via-white to-[#f0d0cb]"
             data-aos="fade-in"
+            key={element._id}
           >
             <img
-              src={`${element.img.source}`}
-              alt={`${element.img.alt}`}
+              src={`${element.img}`}
+              alt="Nothing"
               className="siImg w-36 md:w-48 object-cover rounded-lg"
             />
             <div className="siDesc flex flex-col gap-3 self-start">
@@ -116,22 +147,25 @@ const SearchItem = () => {
                 {element.name}
               </h1>
               <span className="siBranch text-md text-veryDarkBlue">
-                {element.branch}
+                {element.gender}
               </span>
               <span className="siDomain text-lg text-veryDarkBlue font-extrabold">
                 {element.domain}
               </span>
+              <span className="siEmail text-lg text-orange font-bold font-[Pacifico]">
+                {element.level}
+              </span>
               <span className="siEmail text-sm text-veryDarkBlue font-bold">
                 {element.email}
               </span>
-              <span className="siType text-veryDarkBlue">
+              {/* <span className="siType text-veryDarkBlue">
                 Type:{" "}
                 <img
                   src={`${element.type}`}
                   alt=""
                   className="w-6 inline-block"
                 />
-              </span>
+              </span> */}
             </div>
             <div className="siDetails flex flex-col justify-between md:self-start">
               <div
@@ -143,7 +177,7 @@ const SearchItem = () => {
                 </button>
               </div>
               <div
-                className={`text-veryDarkBlue text-base md:text-lg font-semibold border-2 border-veryDarkBlue rounded-lg ${
+                className={`text-veryDarkBlue text-base md:text-md font-semibold border-2 border-veryDarkBlue rounded-lg ${
                   element.showAvailaibility ? "flex" : "hidden"
                 } px-4 flex-col backdrop-blur-xl bg-transparent shadow pb-5 gap-2`}
               >
@@ -153,9 +187,18 @@ const SearchItem = () => {
                 >
                   <img src="./images/cross.png" alt="cross" className="w-8" />
                 </div>
-                <div>{element.availaibility.Slot_1}</div>
-                <div>{element.availaibility.Slot_2}</div>
-                <div>{element.availaibility.Slot_3}</div>
+                <div>
+                  {element.availability.day1}: {element.availability.from1} -{" "}
+                  {element.availability.to1}
+                </div>
+                <div>
+                  {element.availability.day2}: {element.availability.from2} -{" "}
+                  {element.availability.to2}
+                </div>
+                <div>
+                  {element.availability.day3}: {element.availability.from3} -{" "}
+                  {element.availability.to3}
+                </div>
               </div>
             </div>
           </div>
