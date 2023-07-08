@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import destinationContext from "./destinationContext";
 
 const Destination = (props) => {
-  const host = "http://localhost:5000";
+  const host = "http://localhost:4000";
   const token = localStorage.getItem("token");
   const [destination, setDestination] = useState({ key: "domain", s1: "" });
+  const [loading, setLoading] = useState(true);
+  const [allUsers, setAllUsers] = useState([]);
   const [user, setUser] = useState({
     id: "",
     name: "",
@@ -14,9 +16,11 @@ const Destination = (props) => {
     gender: "",
     domain: "",
     type: "",
+    showAvailability: "",
   });
 
   const fetchUser = async () => {
+    setLoading(true);
     const response = await fetch(`${host}/api/auth/getuser`, {
       method: "GET",
 
@@ -25,7 +29,7 @@ const Destination = (props) => {
         "auth-token": `${token}`,
       },
     });
-
+    setLoading(false);
     const json = await response.json();
     setUser({
       id: json._id,
@@ -36,7 +40,17 @@ const Destination = (props) => {
       gender: json.gender,
       domain: json.domain,
       type: json.type,
+      showAvailability: json.showAvailability,
     });
+  };
+
+  const fetchAllUsers = async () => {
+    const response = await fetch(`${host}/api/auth/allusers`, {
+      method: "GET",
+    });
+
+    const json = await response.json();
+    setAllUsers(json);
   };
 
   const userAvailability = async (
@@ -49,7 +63,8 @@ const Destination = (props) => {
     to2,
     day3,
     from3,
-    to3
+    to3,
+    avail
   ) => {
     await fetch(`${host}/api/auth/avail/${id}`, {
       method: "PUT",
@@ -69,13 +84,23 @@ const Destination = (props) => {
           from3: from3,
           to3: to3,
         },
+        showAvailability: avail,
       }),
     });
   };
 
   return (
     <destinationContext.Provider
-      value={{ destination, setDestination, user, fetchUser, userAvailability }}
+      value={{
+        destination,
+        setDestination,
+        user,
+        fetchUser,
+        userAvailability,
+        loading,
+        fetchAllUsers,
+        allUsers,
+      }}
     >
       {props.children}
     </destinationContext.Provider>
