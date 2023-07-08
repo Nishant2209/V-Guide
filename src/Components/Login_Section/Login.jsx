@@ -35,6 +35,12 @@ const Login = () => {
       alert("Invalid Credentials");
     }
   };
+
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const handlePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   return (
     <div
       className="bg-gradient-to-r from-[#a0a6cf] via-white to-[#f1b9b1] font-primary h-[100vh] -mt-6"
@@ -72,7 +78,7 @@ const Login = () => {
               }}
             />
             <input
-              type="password"
+              type={passwordVisible ? "text" : "password"}
               placeholder="Password"
               className="block mt-8 pl-2 w-64 xl:w-80 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
               required
@@ -87,6 +93,17 @@ const Login = () => {
                 }
               }}
             />
+            <img
+              src={
+                passwordVisible ? "images/hidePass.png" : "images/showPass.png"
+              }
+              className={
+                passwordVisible
+                  ? "relative left-56 xl:left-[17.9rem] bottom-8 cursor-pointer w-6"
+                  : "relative left-56 xl:left-72 bottom-8 cursor-pointer"
+              }
+              onClick={handlePasswordVisibility}
+            ></img>
             <div className="mt-5 flex justify-center">
               <button
                 className="hover-underline-animation"
