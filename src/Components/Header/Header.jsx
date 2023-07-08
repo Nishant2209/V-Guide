@@ -44,10 +44,14 @@ const Header = () => {
               // For Enter key
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  if (!value) {
-                    alert("Please Enter Some Data");
+                  if (!localStorage.getItem("token")) {
+                    alert("Please Login First");
                   } else {
-                    handleSearch();
+                    if (!value) {
+                      alert("Please Enter Some Data");
+                    } else {
+                      handleSearch();
+                    }
                   }
                 }
               }}
@@ -57,10 +61,14 @@ const Header = () => {
               icon={faSearch}
               className="headerIcon border-[3px] p-3 rounded-full border-veryDarkBlue bg-lightGray text-orange cursor-pointer animate-bounce"
               onClick={() => {
-                if (!value) {
-                  alert("Please Enter Some Data");
+                if (!localStorage.getItem("token")) {
+                  alert("Please Login First");
                 } else {
-                  handleSearch();
+                  if (!value) {
+                    alert("Please Enter Some Data");
+                  } else {
+                    handleSearch();
+                  }
                 }
               }}
             />
