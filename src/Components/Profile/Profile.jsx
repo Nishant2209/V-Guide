@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import destinationContext from "../../Context/destinationContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const context = useContext(destinationContext);
   const { user, fetchUser, userAvailability } = context;
+
+  const navigate = useNavigate();
 
   const [availability, setAvailability] = useState({
     day1: "",
@@ -20,7 +23,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    userAvailability(
+    await userAvailability(
       user.id,
       availability.day1,
       availability.from1,
@@ -32,6 +35,9 @@ const Profile = () => {
       availability.from3,
       availability.to3
     );
+
+    alert("Availability Saved");
+    navigate("/Dashboard");
   };
 
   const onChange = (e) => {
@@ -216,9 +222,7 @@ const Profile = () => {
               </button>
             </form>
           </div>
-        ) : (
-          ""
-        )}
+        ) : null}
       </div>
     </div>
   );
