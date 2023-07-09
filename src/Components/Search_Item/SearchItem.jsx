@@ -69,7 +69,7 @@ const SearchItem = () => {
       <div className="filters">
         <div className="flex my-6 justify-around">
           <button
-            className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
+            className={`btn-fill text-xs py-2 px-4 md:px-6 md:text-base text-orange font-bold rounded-lg 
        hover:text-veryDarkBlue transition ease-in-out hover:-translate-y-1 hover:border-[0.5px]
         hover:border-veryDarkBlue  ${
           destination.s1 === "" ? "active" : "border-0"
@@ -84,7 +84,7 @@ const SearchItem = () => {
             Show All
           </button>
           <button
-            className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
+            className={`btn-fill text-xs py-2 px-4 md:px-6 md:text-base text-orange font-bold rounded-lg 
        hover:text-veryDarkBlue transition ease-in-out hover:-translate-y-1 hover:border-[0.5px]
         hover:border-veryDarkBlue  ${
           destination.s1 === "alpha" ? "active" : "border-0"
@@ -99,7 +99,7 @@ const SearchItem = () => {
             Alpha
           </button>
           <button
-            className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
+            className={`btn-fill text-xs py-2 px-4 md:px-6 md:text-base text-orange font-bold rounded-lg 
        hover:text-veryDarkBlue transition ease-in-out hover:-translate-y-1 hover:border-[0.5px]
         hover:border-veryDarkBlue  ${
           destination.s1 === "beta" ? "active" : "border-0"
@@ -114,7 +114,7 @@ const SearchItem = () => {
             Beta
           </button>
           <button
-            className={`btn-fill  py-2 px-6 text-orange font-bold rounded-full 
+            className={`btn-fill text-xs py-2 px-4 md:px-6 md:text-base text-orange font-bold rounded-lg 
        hover:text-veryDarkBlue transition ease-in-out hover:-translate-y-1 hover:border-[0.5px]
         hover:border-veryDarkBlue  ${
           destination.s1 === "gamma" ? "active" : "border-0"
