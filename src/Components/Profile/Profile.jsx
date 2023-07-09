@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import destinationContext from "../../Context/destinationContext";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const Profile = () => {
+const Profile = (props) => {
+  const { showAlert } = props;
   const context = useContext(destinationContext);
   const { user, fetchUser, userAvailability } = context;
 
@@ -36,7 +37,7 @@ const Profile = () => {
       availability.to3
     );
 
-    alert("Availability Saved");
+    showAlert("Availability Saved", "success");
     navigate("/Dashboard");
   };
 
@@ -47,6 +48,24 @@ const Profile = () => {
     fetchUser();
     // eslint-disable-next-line
   }, []);
+  console.log("Heyyyy", user);
+
+  //Time Formatter from 24hr to 12hr format
+  const timeFormatter = (oldTime) => {
+    const timeString = oldTime;
+    const time = new Date();
+    const [hours, minutes] = timeString.split(":");
+
+    time.setHours(parseInt(hours, 10));
+    time.setMinutes(parseInt(minutes, 10));
+
+    const formattedTime = time.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
+    return formattedTime;
+  };
 
   return (
     <div className="flex flex-col md:flex-row">
@@ -74,24 +93,91 @@ const Profile = () => {
         <div className="text-xl font-bold mb-6 md:mb-0">{user.domain}</div>
       </div>
       <div className="md:w-[75%] flex flex-col gap-y-6 text-lg mx-5 my-4">
-        <div className="flex flex-col gap-y-4 text-base">
-          <div className="font-bold text-2xl md:text-3xl">Information</div>
-          <hr className="bg-veryDarkBlue w-[80%] md:w-96 h-[2px] -mt-2" />
-          <div>
-            <span className="font-bold">Full Name: </span>
-            {user.name}
+        <div className="flex  flex-col lg:flex-row justify-start gap-y-6">
+          <div className="flex flex-col gap-y-4 text-base lg:w-1/2">
+            <div className="font-bold text-2xl md:text-3xl">Information</div>
+            <hr className="bg-veryDarkBlue w-[80%] md:w-96 h-[2px] -mt-2" />
+            <div>
+              <span className="font-bold">Full Name: </span>
+              {user.name}
+            </div>
+            <div>
+              <span className="font-bold">Email: </span> {user.email}
+            </div>
+            <div>
+              <span className="font-bold">Phone: </span>
+              {user.phone}
+            </div>
+            <div>
+              <span className="font-bold">Gender: </span>
+              {user.gender}
+            </div>
           </div>
-          <div>
-            <span className="font-bold">Email: </span> {user.email}
-          </div>
-          <div>
-            <span className="font-bold">Phone: </span>
-            {user.phone}
-          </div>
-          <div>
-            <span className="font-bold">Gender: </span>
-            {user.gender}
-          </div>
+          {user.type === "Mentor" ? (
+            <div className="flex flex-col gap-y-4 text-base lg:w-1/2">
+              <div className="font-bold text-2xl md:text-3xl">
+                Your Availability
+              </div>
+              <hr className="bg-veryDarkBlue w-[80%] md:w-96 h-[2px] -mt-2" />
+              {user.availability.day1 === "" &&
+              user.availability.day2 === "" &&
+              user.availability.day3 === "" ? (
+                <div className="font-bold text-xl text-orange">
+                  No Availability!!!
+                  <img
+                    src="images/error.png"
+                    alt="Error 404"
+                    className="w-56"
+                  />
+                </div>
+              ) : (
+                <div className="flex flex-col gap-y-4 ">
+                  <div className="flex flex-row gap-x-5">
+                    <div>
+                      <span className="font-bold">Slot 1:</span>{" "}
+                      {user?.availability?.day1}
+                    </div>
+                    <div>
+                      <span className="font-bold">From: </span>
+                      {timeFormatter(user?.availability?.from1)}
+                    </div>
+                    <div>
+                      <span className="font-bold">To:</span>{" "}
+                      {timeFormatter(user?.availability?.to1)}
+                    </div>
+                  </div>
+                  <div className="flex flex-row gap-x-5">
+                    <div>
+                      <span className="font-bold">Slot 2:</span>{" "}
+                      {user?.availability?.day2}
+                    </div>
+                    <div>
+                      <span className="font-bold">From:</span>{" "}
+                      {timeFormatter(user?.availability?.from2)}
+                    </div>
+                    <div>
+                      <span className="font-bold">To:</span>{" "}
+                      {timeFormatter(user?.availability?.to2)}
+                    </div>
+                  </div>
+                  <div className="flex flex-row gap-x-5">
+                    <div>
+                      <span className="font-bold">Slot 3:</span>{" "}
+                      {user?.availability?.day3}
+                    </div>
+                    <div>
+                      <span className="font-bold">From: </span>
+                      {timeFormatter(user?.availability?.from3)}
+                    </div>
+                    <div>
+                      <span className="font-bold">To:</span>{" "}
+                      {timeFormatter(user?.availability?.to3)}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : null}
         </div>
         {user.type === "Mentor" ? (
           <div className="flex flex-col gap-y-4 w-full">
@@ -108,6 +194,7 @@ const Profile = () => {
                 <select
                   name="day1"
                   id="day1"
+                  required
                   onChange={onChange}
                   value={availability.day1}
                   className="mr-3 md:mt-8 pl-2 w-full md:w-40 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
@@ -126,6 +213,7 @@ const Profile = () => {
                   type="time"
                   name="from1"
                   id="from1"
+                  required
                   onChange={onChange}
                   value={availability.from1}
                   className="mr-3 md:mt-8 pl-2 w-full md:w-40 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
@@ -135,6 +223,7 @@ const Profile = () => {
                   type="time"
                   name="to1"
                   id="to1"
+                  required
                   onChange={onChange}
                   value={availability.to1}
                   className="mr-3 md:mt-8 pl-2 w-full md:w-40 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
@@ -145,6 +234,7 @@ const Profile = () => {
                 <select
                   name="day2"
                   id="day2"
+                  required
                   onChange={onChange}
                   value={availability.day2}
                   className="mr-3 md:mt-8 pl-2 w-full md:w-40 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
@@ -163,6 +253,7 @@ const Profile = () => {
                   type="time"
                   name="from2"
                   id="from2"
+                  required
                   onChange={onChange}
                   value={availability.from2}
                   className="mr-3 md:mt-8 pl-2 w-full md:w-40 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
@@ -172,6 +263,7 @@ const Profile = () => {
                   type="time"
                   name="to2"
                   id="to2"
+                  required
                   onChange={onChange}
                   value={availability.to2}
                   className="mr-3 md:mt-8 pl-2 w-full md:w-40 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
@@ -182,6 +274,7 @@ const Profile = () => {
                 <select
                   name="day3"
                   id="day3"
+                  required
                   onChange={onChange}
                   value={availability.day3}
                   className="mr-3 md:mt-8 pl-2 w-full md:w-40 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
@@ -200,6 +293,7 @@ const Profile = () => {
                   type="time"
                   name="from3"
                   id="from3"
+                  required
                   onChange={onChange}
                   value={availability.from3}
                   className="mr-3 md:mt-8 pl-2 w-full md:w-40 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
@@ -209,6 +303,7 @@ const Profile = () => {
                   type="time"
                   name="to3"
                   id="to3"
+                  required
                   onChange={onChange}
                   value={availability.to3}
                   className="mr-3 md:mt-8 pl-2 w-full md:w-40 py-2 border-veryDarkBlue border-2 bg-transparent text-veryDarkBlue placeholder-veryDarkBlue shadow-xl"
