@@ -187,18 +187,43 @@ const SearchItem = () => {
                 >
                   <img src="./images/cross.png" alt="cross" className="w-8" />
                 </div>
-                <div>
-                  {element.availability.day1}: {element.availability.from1} -{" "}
-                  {element.availability.to1}
-                </div>
-                <div>
-                  {element.availability.day2}: {element.availability.from2} -{" "}
-                  {element.availability.to2}
-                </div>
-                <div>
-                  {element.availability.day3}: {element.availability.from3} -{" "}
-                  {element.availability.to3}
-                </div>
+                {element.availability.day1 === "" &&
+                element.availability.day2 === "" &&
+                element.availability.day3 === "" ? (
+                  <div className="text-center font-bold text-lg">
+                    No Availability
+                  </div>
+                ) : (
+                  <div>
+                    {element.availability.day1 === "" ? (
+                      " "
+                    ) : (
+                      <div>
+                        {element.availability.day1}:{" "}
+                        {element.availability.from1} -{" "}
+                        {element.availability.to1}
+                      </div>
+                    )}
+                    {element.availability.day2 === "" ? (
+                      " "
+                    ) : (
+                      <div>
+                        {element.availability.day2}:{" "}
+                        {element.availability.from2} -{" "}
+                        {element.availability.to2}
+                      </div>
+                    )}
+                    {element.availability.day3 === "" ? (
+                      ""
+                    ) : (
+                      <div>
+                        {element.availability.day3}:{" "}
+                        {element.availability.from3} -{" "}
+                        {element.availability.to3}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
