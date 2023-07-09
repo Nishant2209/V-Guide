@@ -14,7 +14,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    navigate("/Mentors");
+    navigate("/MentorsList");
     a.setDestination({
       key: "domain",
       s1: `${value.toLowerCase()}`,
