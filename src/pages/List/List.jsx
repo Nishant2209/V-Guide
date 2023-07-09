@@ -22,7 +22,7 @@ const List = () => {
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listResult">
-            {user.type === "Mentor" ? navigate("/Dashboard") : <SearchItem />}
+            {user.type === "Mentor" ? navigate("/Appointment") : <SearchItem />}
           </div>
         </div>
       </div>
