@@ -9,6 +9,23 @@ const SearchItem = () => {
   let key = destination.key;
   const host = "http://localhost:4000";
 
+  //Time Formatter from 24hr to 12hr format
+  const timeFormatter = (oldTime) => {
+    const timeString = oldTime;
+    const time = new Date();
+    const [hours, minutes] = timeString.split(":");
+
+    time.setHours(parseInt(hours, 10));
+    time.setMinutes(parseInt(minutes, 10));
+
+    const formattedTime = time.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
+    return formattedTime;
+  };
+
   useEffect(() => {
     fetchAllUsers();
   }, []);
@@ -200,8 +217,8 @@ const SearchItem = () => {
                     ) : (
                       <div>
                         {element.availability.day1}:{" "}
-                        {element.availability.from1} -{" "}
-                        {element.availability.to1}
+                        {timeFormatter(element.availability.from1)} -{" "}
+                        {timeFormatter(element.availability.to1)}
                       </div>
                     )}
                     {element.availability.day2 === "" ? (
@@ -209,8 +226,8 @@ const SearchItem = () => {
                     ) : (
                       <div>
                         {element.availability.day2}:{" "}
-                        {element.availability.from2} -{" "}
-                        {element.availability.to2}
+                        {timeFormatter(element.availability.from2)} -{" "}
+                        {timeFormatter(element.availability.to2)}
                       </div>
                     )}
                     {element.availability.day3 === "" ? (
@@ -218,8 +235,8 @@ const SearchItem = () => {
                     ) : (
                       <div>
                         {element.availability.day3}:{" "}
-                        {element.availability.from3} -{" "}
-                        {element.availability.to3}
+                        {timeFormatter(element.availability.from3)} -{" "}
+                        {timeFormatter(element.availability.to3)}
                       </div>
                     )}
                   </div>
