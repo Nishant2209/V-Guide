@@ -28,7 +28,7 @@ function Footer() {
         </div>
         <div className="line h-[0.15rem] w-3/4 bg-[#5C6F89] rounded-xl self-center"></div>
         <div className=" text-white md:mt-7 self-center">
-          <h4>© 2022 V-Guide All rights reserved</h4>
+          <h4>© 2023 V-Guide All rights reserved</h4>
         </div>
       </div>
     </footer>
