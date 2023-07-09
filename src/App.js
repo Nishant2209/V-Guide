@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import List from "./pages/List/List";
 import Destination from "./Context/destination";
 import ProfilePage from "./pages/Profile/ProfilePage";
-
+import AppointmentPage from "./pages/AppointmentsPage/AppointmentPage";
 function App() {
   return (
     <Destination>
@@ -16,8 +16,9 @@ function App() {
           <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/SignUpPage" element={<SignUpPage />} />
           <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/Mentors" element={<List />} />
+          <Route path="/MentorsList" element={<List />} />
           <Route path="/Profile" element={<ProfilePage />} />
+          <Route path="/Appointment" element={<AppointmentPage />} />
         </Routes>
       </BrowserRouter>
     </Destination>
