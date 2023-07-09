@@ -17,6 +17,7 @@ const Destination = (props) => {
     domain: "",
     type: "",
     showAvailability: "",
+    availability: {},
   });
 
   const fetchUser = async () => {
@@ -41,6 +42,7 @@ const Destination = (props) => {
       domain: json.domain,
       type: json.type,
       showAvailability: json.showAvailability,
+      availability: json.availability,
     });
   };
 
