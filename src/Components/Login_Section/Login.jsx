@@ -43,7 +43,7 @@ const Login = () => {
 
   return (
     <div
-      className="bg-gradient-to-r from-[#a0a6cf] via-white to-[#f1b9b1] font-primary h-[100vh] -mt-6"
+      className="bg-gradient-to-r from-[#a0a6cf] via-white to-[#f1b9b1] font-primary min-h-screen -mt-6"
       data-aos="fade-in"
     >
       <div className="font-bold mt-6 flex justify-end">

@@ -58,7 +58,7 @@ const SignUp = () => {
   };
   return (
     <div
-      className="bg-gradient-to-r from-[#a0a6cf] via-white to-[#f1b9b1] font-primary -mt-6 h-[100vh]"
+      className="bg-gradient-to-r from-[#a0a6cf] via-white to-[#f1b9b1] font-primary -mt-6 min-h-screen"
       data-aos="fade-in"
     >
       <div className="font-bold mt-6 flex justify-end">
@@ -240,7 +240,7 @@ const SignUp = () => {
             </div>
             <div className="block mx-auto mt-6 text-black text-base md:col-span-2 text-center">
               <button
-                className="bg-veryDarkBlue text-skin px-5 py-1 hover:scale-110 transition-all duration-300 ease-in-out font-bold rounded-md hover:bg-transparent hover:text-veryDarkBlue hover:border-veryDarkBlue hover:border-2"
+                className="bg-veryDarkBlue text-skin px-5 py-1 mb-4 hover:scale-110 transition-all duration-300 ease-in-out font-bold rounded-md hover:bg-transparent hover:text-veryDarkBlue hover:border-veryDarkBlue hover:border-2"
                 type="submit"
               >
                 Sign Up
