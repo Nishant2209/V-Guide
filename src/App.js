@@ -7,18 +7,47 @@ import List from "./pages/List/List";
 import Destination from "./Context/destination";
 import ProfilePage from "./pages/Profile/ProfilePage";
 import AppointmentPage from "./pages/AppointmentsPage/AppointmentPage";
+import { Alert } from "./Components/Alert/Alert";
+import { useState } from "react";
 function App() {
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type,
+    });
+    setTimeout(() => {
+      setAlert(null);
+    }, 2000);
+  };
   return (
     <Destination>
       <BrowserRouter>
+        <Alert alert={alert} />
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/LoginPage" element={<LoginPage />} />
-          <Route path="/SignUpPage" element={<SignUpPage />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/MentorsList" element={<List />} />
-          <Route path="/Profile" element={<ProfilePage />} />
-          <Route path="/Appointment" element={<AppointmentPage />} />
+          <Route
+            path="/LoginPage"
+            element={<LoginPage showAlert={showAlert} />}
+          />
+          <Route
+            path="/SignUpPage"
+            element={<SignUpPage showAlert={showAlert} />}
+          />
+          <Route
+            path="/Dashboard"
+            element={<Dashboard showAlert={showAlert} />}
+          />
+          <Route path="/MentorsList" element={<List showAlert={showAlert} />} />
+          <Route
+            path="/Profile"
+            element={<ProfilePage showAlert={showAlert} />}
+          />
+          <Route
+            path="/Appointment"
+            element={<AppointmentPage showAlert={showAlert} />}
+          />
         </Routes>
       </BrowserRouter>
     </Destination>

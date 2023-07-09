@@ -5,7 +5,8 @@ import { FaUserCircle } from "react-icons/fa";
 import destinationContext from "../../Context/destinationContext";
 import Spinner from "../Spinner/Spinner";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { showAlert } = props;
   const context = useContext(destinationContext);
   const { user, fetchUser, loading } = context;
   const [burger_class, setBurgerClass] = useState("!open");
@@ -73,10 +74,11 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/Dashboard");
+    showAlert("Logged Out Successfully", "success");
   };
 
   const handleClick = () => {
-    alert("Please Login First");
+    showAlert("Please Login First", "danger");
   };
 
   return (
@@ -107,7 +109,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:block">
-            <ul className="flex row">
+            <ul className="flex flex-row">
               <li
                 className="mr-10 font-semibold hover-underline-animation"
                 onClick={routeChange4}

@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 
-const List = () => {
+const List = (props) => {
   const navigate = useNavigate();
   const context = useContext(destinationContext);
   const { user, fetchUser } = context;
@@ -22,7 +22,11 @@ const List = () => {
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listResult">
-            {user.type === "Mentor" ? navigate("/Appointment") : <SearchItem />}
+            {user.type === "Mentor" ? (
+              navigate("/Appointment")
+            ) : (
+              <SearchItem showAlert={props.showAlert} />
+            )}
           </div>
         </div>
       </div>

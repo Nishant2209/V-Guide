@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = (props) => {
+  const { showAlert } = props;
   let navigate = useNavigate();
   let host = "http://localhost:4000";
   const [user, setUser] = useState({
@@ -47,13 +48,13 @@ const SignUp = () => {
 
       const json = await response.json();
       if (json.success) {
-        alert("Acount created successfully");
+        showAlert("Acount created successfully", "success");
         navigate("/LoginPage");
       } else {
-        alert("User Already Exists");
+        showAlert("User Already Exists", "danger");
       }
     } else {
-      alert("Passwords should be equal");
+      showAlert("Passwords should be equal", "danger");
     }
   };
   return (

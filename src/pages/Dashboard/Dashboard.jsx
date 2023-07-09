@@ -5,10 +5,10 @@ import TOM from "../../Components/TypesOfMentor/TOM";
 
 import "./Dashboard.css";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
     <div className="dash" data-aos="fade-in">
-      <Header />
+      <Header showAlert={props.showAlert}/>
       <Featured />
       <TOM />
       <Footer />

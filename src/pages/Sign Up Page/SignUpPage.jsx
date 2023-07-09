@@ -1,9 +1,9 @@
 import SignUp from "../../Components/SignUp_Section/SignUp";
 
-const SignUpPage = () => {
+const SignUpPage = (props) => {
   return (
     <div>
-      <SignUp />
+      <SignUp showAlert={props.showAlert} />
     </div>
   );
 };
