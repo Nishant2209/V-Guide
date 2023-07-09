@@ -61,10 +61,13 @@ const Navbar = () => {
   };
 
   const routeChange5 = () => {
-    navigate("/Mentors");
+    navigate("/MentorsList");
   };
   const routeChange6 = () => {
     navigate("/Profile");
+  };
+  const routeChange7 = () => {
+    navigate("/Appointment");
   };
 
   const handleLogout = () => {
@@ -111,7 +114,16 @@ const Navbar = () => {
               >
                 Home
               </li>
-              {user.type === "Student" ? (
+              {user.type === "Mentor" ? (
+                <li
+                  className="mr-10 font-semibold hover-underline-animation"
+                  onClick={
+                    localStorage.getItem("token") ? routeChange7 : handleClick
+                  }
+                >
+                  Appointments
+                </li>
+              ) : (
                 <li
                   className="mr-10 font-semibold hover-underline-animation"
                   onClick={
@@ -120,7 +132,7 @@ const Navbar = () => {
                 >
                   Mentors
                 </li>
-              ) : null}
+              )}
 
               <li
                 className="font-semibold hover-underline-animation"
@@ -187,7 +199,7 @@ const Navbar = () => {
                 </div>
               </div>
               <button
-                className="navButton border-[1.2px] py-1 px-3 lg:py-1 lg:px-4 ml-3 border-veryDarkBlue rounded-lg font-extrabold text-sm lg:text-base"
+                className="hidden lg:block navButton border-[1.2px] py-1 px-3 lg:py-1 lg:px-4 ml-3 border-veryDarkBlue rounded-lg font-extrabold text-sm lg:text-base"
                 onClick={handleLogout}
               >
                 LogOut
@@ -204,13 +216,23 @@ const Navbar = () => {
           >
             <ul className="flex flex-col space-y-6 items-center">
               <li onClick={routeChange4}>Home</li>
-              <li
-                onClick={
-                  localStorage.getItem("token") ? routeChange5 : handleClick
-                }
-              >
-                Mentors
-              </li>
+              {user.type === "Mentor" ? (
+                <li
+                  onClick={
+                    localStorage.getItem("token") ? routeChange7 : handleClick
+                  }
+                >
+                  Appointments
+                </li>
+              ) : (
+                <li
+                  onClick={
+                    localStorage.getItem("token") ? routeChange5 : handleClick
+                  }
+                >
+                  Mentors
+                </li>
+              )}
               <li
                 onClick={
                   localStorage.getItem("token") ? routeChange6 : handleClick
@@ -235,7 +257,12 @@ const Navbar = () => {
                 </button>
               </div>
             ) : (
-              ""
+              <button
+                className="font-bold transition ease-in-out delay-150 bg-transparent text-skin rounded-xl px-7 py-2 border-2"
+                onClick={handleLogout}
+              >
+                LogOut
+              </button>
             )}
           </div>
         </div>
