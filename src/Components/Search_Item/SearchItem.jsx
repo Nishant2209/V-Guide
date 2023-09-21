@@ -155,9 +155,13 @@ const SearchItem = () => {
             key={element._id}
           >
             <img
-              src={`${element.img}`}
+              src={`${
+                element.gender === "Female"
+                  ? "images/woman.jpg"
+                  : "images/man.jpg"
+              }`}
               alt="Nothing"
-              className="siImg w-36 md:w-48 object-cover rounded-lg"
+              className="siImg w-36 md:w-40 object-cover rounded-full"
             />
             <div className="siDesc flex flex-col gap-3 self-start">
               <h1 className="siTitle text-3xl font-extrabold text-orange">
