@@ -69,6 +69,8 @@ const Header = (props) => {
                   } else {
                     if (!value) {
                       showAlert("Please Enter Some Data", "warning");
+                    } else if (user.type === "Mentor") {
+                      showAlert("Please Login using student Id", "danger");
                     } else {
                       handleSearch();
                     }
@@ -86,6 +88,8 @@ const Header = (props) => {
                 } else {
                   if (!value) {
                     showAlert("Please Enter Some Data", "warning");
+                  } else if (user.type === "Mentor") {
+                    showAlert("Please Login using student Id", "danger");
                   } else {
                     handleSearch();
                   }
