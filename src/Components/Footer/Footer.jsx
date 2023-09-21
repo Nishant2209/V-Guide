@@ -19,10 +19,10 @@ function Footer() {
               </p>
             </div>
             <div className="neo flex flex-col w-1/2 md:h-full md:justify-end md:items-end">
-              <p className="md:text-lg font-normal text-white">Made with ❤️ by</p>
+              {/* <p className="md:text-lg font-normal text-white">Made with ❤️ by</p>
               <h2 className="text-2xl md:text-3xl md:my-1 font-bold text-[#E53F19] font-primary">
                 The Neophytes
-              </h2>
+              </h2> */}
             </div>
           </div>
         </div>
